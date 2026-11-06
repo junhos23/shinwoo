@@ -2,3 +2,11 @@ node_modules/
 .DS_Store
 Thumbs.db
 ~$*.xlsx
+
+# 사용자 원본 자료 (개인정보 포함 가능)
+*.jpg
+*.jpeg
+*.heic
+*.xlsx
+*.xls
+*.csv

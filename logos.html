@@ -53,7 +53,15 @@
   .d .seal { width: 84px; height: 84px; border-radius: 50%; border: 3px solid var(--brand); display: grid; place-items: center; position: relative; }
   .d .seal::after { content: ""; position: absolute; inset: 5px; border-radius: 50%; border: 1px solid color-mix(in srgb, var(--brand) 35%, transparent); }
   .d .name { font-size: 34px; font-weight: 700; letter-spacing: -0.03em; color: var(--brand-deep); line-height: 1.1; }
-  .d .en { font-size: 13px; font-weight: 600; letter-spacing: .42em; color: var(--accent); margin-top: 6px; }
+  .d .en { font-size: 12px; font-weight: 600; letter-spacing: .24em; color: var(--accent); margin-top: 6px; }
+
+  /* E 명함 계승형 */
+  .e { display: grid; gap: 14px; }
+  .e .row { display: flex; align-items: center; gap: 16px; }
+  .e .orb { width: 78px; height: 78px; border-radius: 50%; background: linear-gradient(90deg, var(--accent) 50%, var(--brand) 50%); display: grid; place-items: center; }
+  .e .name { font-size: 36px; font-weight: 800; letter-spacing: -0.04em; color: var(--brand-deep); line-height: 1.1; }
+  .e .en { font-size: 12px; font-weight: 700; letter-spacing: .2em; color: var(--ink-soft); margin-top: 6px; }
+  .e .stripe { height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--brand) 0 55%, var(--accent) 55% 85%, #f2c94c 85%); }
 
   .note { margin-top: 32px; font-size: 13px; color: var(--ink-soft); }
 </style>
@@ -85,7 +93,7 @@
 
 <div class="wrap">
   <h1>신우코맥스 로고 초안</h1>
-  <p class="lead">앞에서 고른 "C 네트워크 S" 심볼에 회사 이름을 붙인 네 가지 조합입니다. 아래 작은 칸은 실제로 쓰일 때의 모습(어두운 배경, 앱 아이콘 크기)입니다.</p>
+  <p class="lead">"C 네트워크 S" 심볼에 명함의 회사명(신우코맥스 · SHINWOO COMMAX)과 "Home Mobile System 시공 전문" 성격을 반영한 다섯 가지 조합입니다. E는 명함의 원형 마크와 하단 색띠를 이어받았습니다. 아래 작은 칸은 실제로 쓰일 때의 모습(어두운 배경, 앱 아이콘 크기)입니다.</p>
 
   <div class="grid">
 
@@ -93,7 +101,7 @@
       <div class="stage">
         <div class="a">
           <svg width="76" height="76"><use href="#s-color"/></svg>
-          <div><div class="name">신우코맥스</div><div class="sub">홈오토메이션 · 출입통제 · 네트워크</div></div>
+          <div><div class="name">신우코맥스</div><div class="sub">홈네트워크 · 출입통제 · 네트워크 시공 전문</div></div>
         </div>
       </div>
       <div class="meta">
@@ -152,7 +160,7 @@
       <div class="stage">
         <div class="d">
           <div class="seal"><svg width="54" height="54"><use href="#s-color"/></svg></div>
-          <div><div class="name">신우코맥스</div><div class="en">SHINWOO</div></div>
+          <div><div class="name">신우코맥스</div><div class="en">SHINWOO COMMAX</div></div>
         </div>
       </div>
       <div class="meta">
@@ -166,8 +174,29 @@
       </div>
     </article>
 
+    <article class="draft">
+      <div class="stage">
+        <div class="e">
+          <div class="row">
+            <div class="orb"><svg width="52" height="52"><use href="#s-reverse"/></svg></div>
+            <div><div class="name">신우코맥스</div><div class="en">SHINWOO COMMAX</div></div>
+          </div>
+          <div class="stripe"></div>
+        </div>
+      </div>
+      <div class="meta">
+        <h2><span>E</span>명함 계승형</h2>
+        <p>명함 오른쪽 위의 청록·파랑 원형 마크와 아래쪽 색띠를 살렸습니다. 지금 쓰는 명함과 자연스럽게 이어져 기존 고객에게 익숙합니다.</p>
+        <div class="uses">
+          <div class="use dark"><div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(90deg,#16b3a0 50%,#4a98e6 50%);display:grid;place-items:center"><svg width="22" height="22"><use href="#s-reverse"/></svg></div><b style="font-size:17px">신우코맥스</b></div>
+          <div class="use icon" style="border-radius:50%;background:linear-gradient(90deg,#16b3a0 50%,#0b5cad 50%);border:0"><svg width="32" height="32"><use href="#s-reverse"/></svg></div>
+          <span class="cap">어두운 배경 · 아이콘</span>
+        </div>
+      </div>
+    </article>
+
   </div>
-  <p class="note">※ 초안입니다. 확정되면 글자를 윤곽선으로 바꾼 SVG·PNG 파일로 정리합니다. 영문 표기 "SHINWOO"는 실제 사용하는 영문명이 있으면 그것으로 바꿉니다. 코맥스 상표 디자인은 사용하지 않았습니다.</p>
+  <p class="note">※ 초안입니다. 확정되면 글자를 윤곽선으로 바꾼 SVG·PNG 파일로 정리합니다. 명함 왼쪽 위의 코맥스 로고는 코맥스 본사 상표라서 신우코맥스 로고에는 흉내 내지 않았습니다.</p>
 </div>
 </body>
 </html>
