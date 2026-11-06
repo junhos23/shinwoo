@@ -181,11 +181,17 @@
   .cbtn:hover { border-color: var(--brand); }
   .note { font-size: 13px; color: var(--ink-soft); }
 
-  /* 오시는 길 (카카오·네이버 지도 링크) */
+  /* 오시는 길 (카카오 지도 + 네이버 버튼) */
   .map-wrap { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: var(--bg); }
-  .map-head { padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .map-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .map-head a { color: var(--ink-soft); font-size: 13px; }
+  .map-head a:hover { color: var(--brand); }
+  #kakao-map { height: 340px; }
+  .map-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 16px 18px; border-top: 1px solid var(--line); }
+  .map-foot div { display: grid; font-size: 14px; }
+  .map-foot span { color: var(--ink-soft); font-size: 13px; }
   .map-body {
-    min-height: 300px; padding: 32px 20px; display: grid; place-content: center; justify-items: center; gap: 6px; text-align: center;
+    height: 100%; padding: 32px 20px; display: grid; place-content: center; justify-items: center; gap: 6px; text-align: center;
     background:
       linear-gradient(color-mix(in srgb, var(--brand) 6%, transparent) 1px, transparent 1px) 0 0 / 26px 26px,
       linear-gradient(90deg, color-mix(in srgb, var(--brand) 6%, transparent) 1px, transparent 1px) 0 0 / 26px 26px,
@@ -194,10 +200,8 @@
   .map-body > span { color: var(--ink-soft); font-size: 14px; }
   .map-pin { flex: none; width: 52px; height: 52px; border-radius: 50%; background: var(--brand); color: #fff; display: grid; place-items: center; margin-bottom: 6px; }
   .map-pin svg { width: 26px; height: 26px; }
-  .map-btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 16px; }
-  .mbtn { padding: 12px 20px; border-radius: 12px; font-weight: 700; font-size: 15px; transition: transform .15s; }
+  .mbtn { padding: 11px 18px; border-radius: 12px; font-weight: 700; font-size: 14px; transition: transform .15s; }
   .mbtn:hover { transform: translateY(-2px); }
-  .mbtn.kakao { background: #fee500; color: #191919; }
   .mbtn.naver { background: var(--naver); color: #fff; }
 
   footer { border-top: 1px solid var(--line); padding: 32px 0 96px; font-size: 13px; color: var(--ink-soft); }
@@ -504,18 +508,23 @@
       </div>
 
       <div class="map-wrap">
-        <div class="map-head"><strong>오시는 길</strong></div>
-        <div class="map-body">
-          <span class="map-pin">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          </span>
-          <strong>경기도 성남시 분당구 궁내동 281-9 202호</strong>
-          <span>지도 앱에서 "신우코맥스"를 검색해도 찾을 수 있습니다.</span>
-          <!-- 두 링크 모두 "신우코맥스" 검색 결과로 열림 (키·가입 필요 없음) -->
-          <div class="map-btns">
-            <a class="mbtn kakao" href="https://map.kakao.com/?q=%EC%8B%A0%EC%9A%B0%EC%BD%94%EB%A7%A5%EC%8A%A4" target="_blank" rel="noopener">카카오 지도 보기</a>
-            <a class="mbtn naver" href="https://map.naver.com/p/search/%EC%8B%A0%EC%9A%B0%EC%BD%94%EB%A7%A5%EC%8A%A4" target="_blank" rel="noopener">네이버 지도 길찾기</a>
+        <div class="map-head"><strong>오시는 길</strong><a href="https://map.kakao.com/link/map/1189256132" target="_blank" rel="noopener">카카오맵에서 크게 보기 ↗</a></div>
+        <!-- 카카오 지도: config.js 에 JavaScript 키가 있으면 지도가 뜨고, 없으면 아래 안내가 보인다 -->
+        <div id="kakao-map" data-address="경기 성남시 분당구 대왕판교로 301">
+          <div class="map-body">
+            <span class="map-pin">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </span>
+            <strong>신우코맥스</strong>
+            <span>지도를 불러오는 중입니다</span>
           </div>
+        </div>
+        <div class="map-foot">
+          <div>
+            <strong>경기 성남시 분당구 대왕판교로 301</strong>
+            <span>(지번) 궁내동 281-9 202호</span>
+          </div>
+          <a class="mbtn naver" href="https://map.naver.com/p/search/%EC%8B%A0%EC%9A%B0%EC%BD%94%EB%A7%A5%EC%8A%A4" target="_blank" rel="noopener">네이버 지도 보기</a>
         </div>
       </div>
     </div>
@@ -533,6 +542,35 @@
   <a href="tel:031-706-0993" class="call">전화 상담</a>
   <a href="sms:031-706-0993" class="ask">문자 보내기</a>
 </div>
+
+<script src="config.js"></script>
+<script>
+  // 오시는 길: 카카오 지도 (config.js 의 KAKAO_MAP_JS_KEY 사용)
+  (function () {
+    var box = document.getElementById("kakao-map");
+    var key = window.KAKAO_MAP_JS_KEY;
+    var note = box.querySelector(".map-body span:last-child");
+    if (!key) { note.textContent = "지도 준비 중입니다 · 위의 '카카오맵에서 크게 보기'를 눌러 주세요"; return; }
+
+    var s = document.createElement("script");
+    s.src = "https://dapi.kakao.com/v2/maps/sdk.js?appkey=" + encodeURIComponent(key) + "&libraries=services&autoload=false";
+    s.onerror = function () { note.textContent = "지도를 불러오지 못했습니다 · 위의 '카카오맵에서 크게 보기'를 눌러 주세요"; };
+    s.onload = function () {
+      kakao.maps.load(function () {
+        new kakao.maps.services.Geocoder().addressSearch(box.dataset.address, function (result, status) {
+          if (status !== kakao.maps.services.Status.OK) { note.textContent = "주소로 위치를 찾지 못했습니다"; return; }
+          var pos = new kakao.maps.LatLng(result[0].y, result[0].x);
+          box.innerHTML = "";
+          var map = new kakao.maps.Map(box, { center: pos, level: 3 });
+          map.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);
+          var marker = new kakao.maps.Marker({ position: pos, map: map });
+          new kakao.maps.InfoWindow({ content: '<div style="padding:6px 10px;font-size:13px;font-weight:700;white-space:nowrap">신우코맥스</div>' }).open(map, marker);
+        });
+      });
+    };
+    document.body.appendChild(s);
+  })();
+</script>
 
 </body>
 </html>
