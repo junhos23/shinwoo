@@ -39,7 +39,8 @@
   }
   .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 20px; letter-spacing: -0.02em; }
-  .logo-img { height: 38px; width: auto; display: block; }
+  .logo-mark { width: 40px; height: 40px; flex: none; display: block; }
+  .logo-name { font-size: 23px; font-weight: 800; letter-spacing: -0.04em; color: var(--ink); }
   .logo small { font-size: 12px; font-weight: 500; color: var(--ink-soft); margin-left: 2px; }
   .nav ul { display: flex; gap: 26px; list-style: none; font-weight: 500; font-size: 15px; }
   .nav ul a:hover { color: var(--brand); }
@@ -218,9 +219,10 @@
 
 <header>
   <div class="wrap nav">
-    <a href="#" class="logo">
-      <!-- assets/logo/logo-compact-color.svg 를 그대로 넣음 (파일만 열어도 보이도록) -->
-      <svg class="logo-img" viewBox="0 0 371 100" role="img" aria-label="신우코맥스"><g transform="translate(8 8) scale(0.84)"><path d="M10 46 L50 12 L90 46" fill="none" stroke="#0b5cad" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 40 V88 H79 V40" fill="none" stroke="#0b5cad" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M61 51 H46 Q38 51 38 59 Q38 66 46 66 H54 Q62 66 62 73 Q62 80 54 80 H39" fill="none" stroke="#16b3a0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="61" cy="51" r="5" fill="#16b3a0"/><circle cx="39" cy="80" r="5" fill="#16b3a0"/></g><path d="M160.58 21.89L152.14 21.89L152.14 61.09L160.58 61.09ZM161.93 68.01L132.69 68.01L132.69 57.23L124.14 57.23L124.14 74.75L161.93 74.75ZM136.50 29.98L136.50 24.82L127.71 24.82L127.71 29.98C127.71 36.89 124.31 44.22 114.94 47.27L119.33 53.89C125.57 51.87 129.73 47.71 132.16 42.52C134.51 47.32 138.52 51.07 144.53 53.01L148.80 46.39C139.66 43.57 136.44 36.78 136.50 29.98ZM213.96 51.66L164.80 51.66L164.80 58.52L185.02 58.52L185.02 75.68L193.40 75.68L193.40 58.52L213.96 58.52ZM189.24 23.54C177.64 23.54 169.49 28.34 169.55 35.84C169.49 43.22 177.64 47.91 189.24 47.91C200.84 47.91 209.04 43.22 209.04 35.84C209.04 28.34 200.84 23.54 189.24 23.54ZM189.24 30.21C196.15 30.27 200.31 32.15 200.31 35.84C200.31 39.41 196.15 41.29 189.24 41.29C182.38 41.29 178.22 39.41 178.22 35.84C178.22 32.15 182.38 30.27 189.24 30.21ZM258.85 26.11L219.82 26.11L219.82 32.85L250.53 32.85C250.50 34.76 250.44 36.81 250.35 39.06L218.01 40.06L219.18 47.21L249.82 45.51C249.44 48.64 248.89 52.07 248.07 55.88L256.27 56.70C258.91 44.92 258.79 37.19 258.85 30.74ZM263.36 62.91L239.75 62.91L239.75 50.31L231.37 50.31L231.37 62.91L214.32 62.91L214.32 69.77L263.36 69.77ZM310.12 21.89L302.09 21.89L302.09 34.67L298.46 34.67L298.46 22.83L290.67 22.83L290.67 53.77L298.46 53.77L298.46 41.41L302.09 41.41L302.09 54.06L310.12 54.06ZM310.12 56.23L272.68 56.23L272.68 62.91L301.68 62.91L301.68 75.63L310.12 75.63ZM287.03 26.52L265.47 26.52L265.47 51.13L287.03 51.13ZM273.44 32.97L279.18 32.97L279.18 44.75L273.44 44.75ZM342.00 28.63L342.00 24.88L332.97 24.88L332.97 28.63C332.92 36.02 327.00 44.57 314.22 46.80L317.80 53.77C327.35 51.92 334.00 46.80 337.49 40.23C340.94 46.86 347.56 51.95 357.17 53.77L360.86 46.80C347.80 44.63 341.94 36.13 342.00 28.63ZM362.39 62.32L313.23 62.32L313.23 69.24L362.39 69.24Z" fill="#13202e"/></svg>
+    <a href="#" class="logo" aria-label="신우코맥스 홈">
+      <!-- 심볼: assets/logo/symbol-color.png 를 128px로 줄여 그대로 넣음 (어느 화면에서나 보이도록) -->
+      <img class="logo-mark" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAL0klEQVR4nO2dz28bxxXH3yypIrEVhL7YAVLAKlCgRzGnHnoIdSwSIZLdowyTf4Glv0D0X2D5LyAN61hHDJygvZG+9hLqLwh9CBD7YgqW47Qmd/oZmkoUWyT3x+xyyZ0PsNCbWNx98+a7O2/eDiMljlzjBJBznAByjhNAznECyDlOADnHCSDnOAHkHCeAnJNbAZSqR+Whr69jSsFTx/3mdk9ySO4EYAZ+MND3tOiKnEOJ6hSLag8hdGnmhlwJ4KNbj6q+lgbmRDwltZcPbzYlJ+RGAKu3Ht3TWnYxZ6KUHJw+vLmHufQsvQB45JfeDP17oqUqYVDSXCl4Zkro01palloAo8EfDNt0s0wzArq7UixsLLMIllYADH6ZO/+IO39N4qCkx5NgGxF0aS0dimPp+GjnaEuL39DogGZsCFJfiVd7ebjdorlU0LflIkimH5VlXCEslQAu33rU4JFflSQhOXz18GYNaylQHAsP831pMBg98rdoJg5BaxWLXo28oE9zoaEviw2Dv0amf0RXyjRTZLRCMMlhTxaYhRYAg1/mzm9z55dopg7B6/Mk2EAEXZoLCX1YTEyyp7VQ05/P4J9BAPtUDvcWNTnE/8Xj8s7RHRH/ADMydPyEgdvFFDurBm/31eH2fYyFgjgsFjYyfTp9wqO7cvboHk8lHS3yMc3oLOAKQXEsBAxSzLLurxyvFL0tBr8n5+D8JJN+C3OdIwaj5NDkBX0amWchBMDglBn8Bu6WaUaGzj7hzjeD36f5HlynxJOgpUU+pxmDkQhqXKdLI9MQk2yzunNUYZY+0oyPxEI9eHV4oyoBuLzzdZNBvC0xILALsULAz+xiMn3fQoIWpYRLrrErrDIwYxHl2mmSWQGE2cAxCTp3wkucatSXOOOXSk0dMzlktZHZDSbEKFuYeZjXuPfEcqYfFfwpkxd04ooAh5q8Vt7Dnz6tzECcsgPBLpHstXGrTDMOJtM3g9/Hjs1bv/yOLOEKITMCIMjmTmtrTJoxUA9WimrXdpDxrzQYDptaq69oRidjG0wyIYDxXNuIO/hK1P3Twxu7mImxuvP1gRZ9BzMyBL1PbpKJDSb4Ml/mmelHZRF9nsRcBcBSqyEWkj1CuXV6uN2RFBnXJ1raQnI4z/Kx4kid0Xw60BR3fv/tnAiYZK86r/mUfpRJDluY1zkiwyC0WLHU6EefZqpw7XQhaNTcrWzgMINfmUfQzkN/SoigI3ZWCCY57EmKpCoAglW2lekHLeumxaKWj7lmOpjESVNa1TEHH4fvnh7erEsGWd15VKd/+5iRoX+pbjDheslDYPa1SF1igKOjDRxpBSYqRug2VggktqlsMCGuyWIr0+fRaOb7Ls3MM57qOnoBVgiKIxEIAsnRsM0lyjTjYJK9LQa/JwsE/SfZHa0Q1jliMEoOTV7Qp2GdRARA58sMfoPTl2lGBuembuDIOsShxJPA1Ao+pxmDkQhqxKFLwyrE2C7jAsmRpv8Si+xl+lHJ8gqB89rDVgKUhRKpbciFMrnBxJoAsrCBI+uMX3o1dczkkNWQtQ0mxDweZp7L0gaOrEO8yuQFnbgiIGBNXivvEa8+rcgQ9+jQmRLJXpvTlGnGwWT6ZvD72EvP27hZKx+bvCBy3CILgE4YJbc1Js3I8DhrFwvejTidWESIn3ly/lu0/JVmdGJuMIkkgPFc1og7+AYcyGxpN2mokNaJ4T5mLIhhn9wp0gYTPhsOW5n+GUrpb04f/mMLM3cggI6OXSP4jSgrhFACYCkTu6z7LjjwhCdARXKIbQGMIDkMUz5WHDMx89XAzgaO98ABJwDLENMWK6oaeUGf5lT43emYwbeU6V8IDjgBJEKwFQLxn87qztftJO78M3DACSAhlKjO6eGNDcyJKI6JMOdbKV9OAwecAJJEyR45wQHWhRD/yaze+mcr9hchZoADTgAJMmuVRfwng4MvtEgJMzFwwAkgQYhvn/hewbwQ/n0yER085ljnCAQOLIQA1tqN0uuXah9zSytZk7f0RUnLK+i7P/291pOQRIjvMUfg2BrUjPjy75MJOwVwstEGDurcL2gGwnxmmoM2MIP3y+vCOmYktC9/1r5/IEpWaV5E3/P03k9f1JoSgrAC4H3JFcrvLR3iMzGngKMKJd82ZgB+28BxeeeR5kcgcMCqAD75V2NND7yvGDZ8l4okPIWdZ8XTn/34Ra2LGYiwAnh1eJNwmfgG32BCiXhj2remRiecBsvAA5aBdzAn8m4Jch4C+PS7RvmNVnfEcqUyJN3nm9XP+BmIqAIwBFmhsQyc+WXZX084DRyt64tfWjxFYdV3FZa2AK4+frDPHVGXDBDmKUBcOzqiAAzjJ3RTLvhqGr94l7jWZQb8XjCoCK4Nh37F16qiRPcY+O6kt09pCcDM7a9PVYOLbdHMBMy5e8++rB1gziSuAM4Yv50ta1FrntKdQsHrUAHsSQAuPGFc0hLA1W+bDdFzfeRfgL77fLNWlwDYEkAcrJ/QkIYArn3b2GWFMnUOnA96GwG0MGbiBAA4EFoA5tH/86n6AbPEkSkureorvY1aH3MmTgCAA6EFcPVxo84n9yVjkBvdf7ZZ28UMhBMA4EAEATRf8KPEERB9wnW6GBFRf6FDn2BMQR9fWpVK0Lvf4AQAOBBKAKP1vq++x5wKd+NT5Uk9bHVuEtceNw7Isu9gXoB+wODvhhl8gxMA4EAoAQRN/ryi/lOU+vw0RlXGIe8CtJRpGnornrSCrvvfxQkAcCCUAJj/m3zqtkxFPyATr0rGcQIAHAglAB7FBE19jjmF4EuxeeIEADhgXQCe6I2fNmsdyThOAIADTgABcQIAJwC7WD+hYe4C8HTN1vIvSZwAAAfCCmDKevwtSkvvw4/0Z2HX5WnjBAA4EEoALAO3+NQR5iz6/N6BV1AdUcOntmsCNnACABwIJYDxi6AXmImDbx0BnjgdqordDy/5T2w+VZwAAAdCCcBANbBFNfArzLTp43BrRen7Uat/53ECABwILYCg7wOSRdWfb96+ixEZJwDAgdACMARJBlOgy/v/jajTghMA4EAkARhICLucYR1znkQWgRMA4EBkAbxNCE2iNl8R8Oo51EaQM5wAAAciC+AMngR1zrQvcyTMdvAznAAAB2ILwDB6Vz+QXS5c5awfS8rQj86zzeoGZmCcAAAHrAjgDDMt/HIqZV+kwrkrAjhT4krrmIlCLnAlTC7gBAA4YFUAtnhHSFVWHNf5zzMItw/BCQBwIJMCOI8Rw+tT6c4WQfAvhRicAAAHMi8AwyffNaq+rxqYE2E18ITVQEUC4gQAOLAYAnjcqPii2pgTcQIY4wQQDCcAwAEngIA4AcwRlwOEIA0BmMz851PvDpn3Fs0yh6GrRDWfbd6+j22Nt9dSP2CWOKbgVgEjkhbA+HVwG3PSgHQpzdbClmbPMFVF0YXrmOL7flUC/z8IXB1gRJICCDD4c+P5ZpXuBMcJAHAglACuPW62OXlFMkf4r6M5AQAOBBbA+O7/HjNzRPkyqhMA4EBgAVwL+M3gtCH7d/sBzpOUALLw3v99wj/6z3ACABwILIAga/E0UUp/8+zL2hZmJJwAAAeCC4DlmT9QP2DOGX2ilNQZ/AMakXECABwILAAD00CTT92WOcBc/1SLNC+tykGYjR+TcAIAHAglAFOVC/ZuPg76GL9GA6xFetzt3aKSTtTC0iScACKi/qDlg7+9Fu/qkNb7DH8syn//84Ho/yXSvbnhBPAOxU8HUvjjQLxLPi3Ktv2CDBj84fMCreXDCSDnOAHkHCeAnLMwAiC77aOAjzEdlmCgTlgtlTCtwnntgwBCLW8cs2GgQi2Xg8J57YMA6lpkH9NhCQbqLgKoi2U4r31KVfPXxv2edtOAFRikk2LRW+vP+EPQUeDcyWD+jo0v/hGmIyaeeNuT/j5TXBITgIEnQfnNwG+KyDqHIzzHK0Wvyp3fxU6ERAVwBkJYGw6kbP6yFU3HDMxfZCsUpcvA9yRhUhGAI7s4AeQcJ4Cc4wSQc5wAco4TQM5xAsg5TgA5xwkg5/wfKV3/22MhZTwAAAAASUVORK5CYII=" alt="" width="40" height="40">
+      <span class="logo-name">신우코맥스</span>
       <small>코맥스 대리점</small></a>
     <ul>
       <li><a href="#services">사업분야</a></li>
@@ -230,7 +232,7 @@
       <li><a href="#faq">자주 묻는 질문</a></li>
     </ul>
     <!-- 실제 전화번호로 바꿔 주세요 -->
-    <a href="tel:010-6331-8249" class="nav-call">전화 상담<span class="num"> 010-6331-8249</span></a>
+    <a href="tel:031-706-0993" class="nav-call">전화 상담<span class="num"> 031-706-0993</span></a>
   </div>
 </header>
 
@@ -486,15 +488,14 @@
         <!-- 출처: 원충연 대표 명함 -->
         <dl class="info">
           <div><dt>대표</dt><dd>원충연</dd></div>
-          <div><dt>휴대폰</dt><dd><a href="tel:010-6331-8249">010-6331-8249</a></dd></div>
           <div><dt>전화</dt><dd><a href="tel:031-706-0993">031-706-0993</a></dd></div>
           <div><dt>팩스</dt><dd>031-709-0993</dd></div>
           <div><dt>이메일</dt><dd><a href="mailto:wcy7552@hanmail.net">wcy7552@hanmail.net</a></dd></div>
           <div><dt>주소</dt><dd>경기도 성남시 분당구 궁내동 281-9 202호</dd></div>
         </dl>
         <div class="contact-btns">
-          <a href="tel:010-6331-8249" class="cbtn primary">전화 상담 010-6331-8249</a>
-          <a href="sms:010-6331-8249" class="cbtn">문자 보내기</a>
+          <a href="tel:031-706-0993" class="cbtn primary">전화 상담 031-706-0993</a>
+          <a href="sms:031-706-0993" class="cbtn">문자 보내기</a>
         </div>
         <p class="note">현장 사진이나 사용 중인 제품 모델명을 문자로 보내 주시면 더 빠르게 안내해 드립니다.</p>
       </div>
@@ -524,8 +525,8 @@
 </footer>
 
 <div class="callbar">
-  <a href="tel:010-6331-8249" class="call">전화 상담</a>
-  <a href="sms:010-6331-8249" class="ask">문자 보내기</a>
+  <a href="tel:031-706-0993" class="call">전화 상담</a>
+  <a href="sms:031-706-0993" class="ask">문자 보내기</a>
 </div>
 
 <script src="config.js"></script>
