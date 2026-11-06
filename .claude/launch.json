@@ -4,7 +4,7 @@
     {
       "name": "homepage",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["serve.js"],
+      "runtimeArgs": ["C:\\Users\\NHN\\Documents\\Claude\\신우\\serve.js"],
       "port": 8080
     }
   ]
