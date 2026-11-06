@@ -202,22 +202,9 @@
   .mbtn:hover { transform: translateY(-2px); }
   .mbtn.naver { background: var(--naver); color: #fff; }
 
-  footer { border-top: 1px solid var(--line); padding: 32px 0 96px; font-size: 13px; color: var(--ink-soft); }
+  footer { border-top: 1px solid var(--line); padding: 32px 0; font-size: 13px; color: var(--ink-soft); }
   footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  @media (min-width: 761px) { footer { padding-bottom: 32px; } }
 
-  /* Mobile call bar */
-  .callbar { display: none; }
-  @media (max-width: 760px) {
-    .callbar {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
-      position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
-      padding: 10px 12px; background: var(--bg); border-top: 1px solid var(--line);
-    }
-    .callbar a { text-align: center; padding: 12px; border-radius: 12px; font-weight: 700; font-size: 15px; }
-    .callbar .call { background: var(--brand); color: #fff; }
-    .callbar .ask { border: 1px solid var(--line); }
-  }
 </style>
 </head>
 <body>
@@ -523,10 +510,6 @@
   </div>
 </footer>
 
-<div class="callbar">
-  <a href="tel:031-706-0993" class="call">전화 상담</a>
-  <a href="sms:031-706-0993" class="ask">문자 보내기</a>
-</div>
 
 
 </body>
