@@ -13,19 +13,19 @@ const medium = opentype.loadSync(path.join(FONT_DIR, "Pretendard-Medium.otf"));
 const NAME = "신우코맥스";
 const TAGLINE = "출입통제 · 홈네트워크 · CCTV 시공 전문";
 
+// frame: 문틀, door: 문짝, hole: 열쇠구멍(문짝 위에 뚫린 색)
 const COLORS = {
-  color: { house: "#0b5cad", s: "#16b3a0", name: "#13202e", tag: "#566577" },
-  white: { house: "#ffffff", s: "#2dd4bf", name: "#ffffff", tag: "#d6e4f2" },
+  color: { frame: "#0b5cad", door: "#16b3a0", hole: "#ffffff", name: "#13202e", tag: "#566577" },
+  white: { frame: "#ffffff", door: "#2dd4bf", hole: "#0b5cad", name: "#ffffff", tag: "#d6e4f2" },
 };
 
-// 집 + S 심볼 (100 x 100 기준)
+// 열린 문 + 열쇠구멍 심볼 (100 x 100 기준)
 function symbol(c) {
   return [
-    `<path d="M10 46 L50 12 L90 46" fill="none" stroke="${c.house}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>`,
-    `<path d="M21 40 V88 H79 V40" fill="none" stroke="${c.house}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>`,
-    `<path d="M61 51 H46 Q38 51 38 59 Q38 66 46 66 H54 Q62 66 62 73 Q62 80 54 80 H39" fill="none" stroke="${c.s}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>`,
-    `<circle cx="61" cy="51" r="5" fill="${c.s}"/>`,
-    `<circle cx="39" cy="80" r="5" fill="${c.s}"/>`,
+    `<rect x="22" y="8" width="56" height="84" rx="10" fill="none" stroke="${c.frame}" stroke-width="9"/>`,
+    `<path d="M36 19 L66 26 V82 L36 89 Z" fill="${c.door}"/>`,
+    `<circle cx="51" cy="50" r="5.5" fill="${c.hole}"/>`,
+    `<path d="M48 53 H54 L55.5 66 H46.5 Z" fill="${c.hole}"/>`,
   ].join("");
 }
 
@@ -45,9 +45,12 @@ function svgDoc(w, h, body, bg) {
 function horizontal(c, withTagline) {
   const pad = 8;
   const symSize = withTagline ? 112 : 84;
-  const textX = pad + symSize + 22;
+  const k = symSize / 100;
+  // 심볼은 가로 17~83 구간에만 그려지므로 좌우 빈 공간만큼 당겨 붙인다
+  const symX = pad - 17 * k;
+  const textX = pad + 66 * k + (withTagline ? 22 : 16);
   const name = textPath(bold, NAME, textX, withTagline ? 66 : 70, withTagline ? 62 : 60, -0.04, c.name);
-  let body = `<g transform="translate(${pad} ${pad}) scale(${symSize / 100})">${symbol(c)}</g>` + name.d;
+  let body = `<g transform="translate(${symX.toFixed(2)} ${pad}) scale(${k})">${symbol(c)}</g>` + name.d;
   let right = name.right;
   if (withTagline) {
     const tag = textPath(medium, TAGLINE, textX + 2, 106, 19.5, 0, c.tag);
@@ -79,5 +82,5 @@ for (const [variant, c] of Object.entries(COLORS)) {
 }
 
 // 앱 아이콘·파비콘용: 흰 바탕 둥근 사각형 위 심볼
-const icon = `<rect width="100" height="100" rx="22" fill="#ffffff"/><g transform="translate(12 10) scale(0.76)">${symbol(COLORS.color)}</g>`;
+const icon = `<rect width="100" height="100" rx="22" fill="#ffffff"/><g transform="translate(9 9) scale(0.82)">${symbol(COLORS.color)}</g>`;
 save("app-icon", svgDoc(100, 100, icon), 512);
