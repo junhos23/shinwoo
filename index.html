@@ -181,12 +181,12 @@
   .cbtn:hover { border-color: var(--brand); }
   .note { font-size: 13px; color: var(--ink-soft); }
 
-  /* 오시는 길 (카카오 지도 + 네이버 버튼) */
+  /* 오시는 길 (구글 지도 + 네이버 버튼) */
   .map-wrap { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: var(--bg); }
   .map-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: 14px; }
   .map-head a { color: var(--ink-soft); font-size: 13px; }
   .map-head a:hover { color: var(--brand); }
-  #kakao-map { height: 340px; }
+  .gmap { display: block; width: 100%; height: 340px; border: 0; background: var(--bg-soft); }
   .map-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 16px 18px; border-top: 1px solid var(--line); }
   .map-foot div { display: grid; font-size: 14px; }
   .map-foot span { color: var(--ink-soft); font-size: 13px; }
@@ -508,17 +508,9 @@
       </div>
 
       <div class="map-wrap">
-        <div class="map-head"><strong>오시는 길</strong><a href="https://map.kakao.com/link/map/1189256132" target="_blank" rel="noopener">카카오맵에서 크게 보기 ↗</a></div>
-        <!-- 카카오 지도: config.js 에 JavaScript 키가 있으면 지도가 뜨고, 없으면 아래 안내가 보인다 -->
-        <div id="kakao-map" data-address="경기 성남시 분당구 대왕판교로 301">
-          <div class="map-body">
-            <span class="map-pin">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            </span>
-            <strong>신우코맥스</strong>
-            <span>지도를 불러오는 중입니다</span>
-          </div>
-        </div>
+        <div class="map-head"><strong>오시는 길</strong><a href="https://www.google.com/maps/search/?api=1&query=%EA%B2%BD%EA%B8%B0+%EC%84%B1%EB%82%A8%EC%8B%9C+%EB%B6%84%EB%8B%B9%EA%B5%AC+%EB%8C%80%EC%99%95%ED%8C%90%EA%B5%90%EB%A1%9C+301" target="_blank" rel="noopener">구글 지도에서 크게 보기 ↗</a></div>
+        <!-- 구글 지도: 주소로 바로 띄움 (키·가입 필요 없음) -->
+        <iframe class="gmap" src="https://maps.google.com/maps?q=%EA%B2%BD%EA%B8%B0+%EC%84%B1%EB%82%A8%EC%8B%9C+%EB%B6%84%EB%8B%B9%EA%B5%AC+%EB%8C%80%EC%99%95%ED%8C%90%EA%B5%90%EB%A1%9C+301&z=17&hl=ko&output=embed" title="구글 지도 - 신우코맥스 위치" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         <div class="map-foot">
           <div>
             <strong>경기 성남시 분당구 대왕판교로 301</strong>
@@ -543,34 +535,6 @@
   <a href="sms:031-706-0993" class="ask">문자 보내기</a>
 </div>
 
-<script src="config.js"></script>
-<script>
-  // 오시는 길: 카카오 지도 (config.js 의 KAKAO_MAP_JS_KEY 사용)
-  (function () {
-    var box = document.getElementById("kakao-map");
-    var key = window.KAKAO_MAP_JS_KEY;
-    var note = box.querySelector(".map-body span:last-child");
-    if (!key) { note.textContent = "지도 준비 중입니다 · 위의 '카카오맵에서 크게 보기'를 눌러 주세요"; return; }
-
-    var s = document.createElement("script");
-    s.src = "https://dapi.kakao.com/v2/maps/sdk.js?appkey=" + encodeURIComponent(key) + "&libraries=services&autoload=false";
-    s.onerror = function () { note.textContent = "지도를 불러오지 못했습니다 · 위의 '카카오맵에서 크게 보기'를 눌러 주세요"; };
-    s.onload = function () {
-      kakao.maps.load(function () {
-        new kakao.maps.services.Geocoder().addressSearch(box.dataset.address, function (result, status) {
-          if (status !== kakao.maps.services.Status.OK) { note.textContent = "주소로 위치를 찾지 못했습니다"; return; }
-          var pos = new kakao.maps.LatLng(result[0].y, result[0].x);
-          box.innerHTML = "";
-          var map = new kakao.maps.Map(box, { center: pos, level: 3 });
-          map.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);
-          var marker = new kakao.maps.Marker({ position: pos, map: map });
-          new kakao.maps.InfoWindow({ content: '<div style="padding:6px 10px;font-size:13px;font-weight:700;white-space:nowrap">신우코맥스</div>' }).open(map, marker);
-        });
-      });
-    };
-    document.body.appendChild(s);
-  })();
-</script>
 
 </body>
 </html>
