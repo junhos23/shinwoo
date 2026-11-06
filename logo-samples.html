@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>신우코맥스 로고 샘플</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root { --bg: #ffffff; --bg-soft: #f4f7fa; --ink: #13202e; --ink-soft: #566577; --line: #e1e7ed; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard", system-ui, sans-serif; background: var(--bg-soft); color: var(--ink); line-height: 1.6; word-break: keep-all; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 44px 20px 80px; }
+  h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; }
+  .lead { color: var(--ink-soft); margin-top: 6px; max-width: 820px; }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 16px; font-size: 13px; color: var(--ink-soft); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend i { width: 28px; height: 14px; border-radius: 4px; background: linear-gradient(90deg, var(--a) 50%, var(--b) 50%); }
+
+  .grid { margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+  .s { --h: #ffffff; background: var(--bg); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; display: grid; }
+  .s .top { display: grid; grid-template-columns: 120px 1fr; gap: 18px; align-items: center; padding: 26px 22px 20px; }
+  .s .big { width: 120px; height: 120px; }
+  .s h2 { font-size: 17px; font-weight: 700; }
+  .s h2 b { color: var(--c1); margin-right: 6px; }
+  .s p { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+  .lock { display: flex; align-items: center; gap: 12px; padding: 18px 22px; border-top: 1px solid var(--line); }
+  .lock svg { width: 46px; height: 46px; flex: none; }
+  .lock .nm { font-size: 26px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; color: var(--ink); }
+  .lock .tg { font-size: 11.5px; font-weight: 500; color: var(--ink-soft); margin-top: 3px; white-space: nowrap; }
+  .uses { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 0 22px 22px; align-items: center; }
+  .rev { --h: var(--base); --c1: #ffffff; background: var(--base); border-radius: 12px; height: 54px; display: flex; align-items: center; gap: 10px; padding: 0 16px; color: #fff; }
+  .rev svg { width: 30px; height: 30px; flex: none; }
+  .rev b { font-size: 17px; letter-spacing: -0.03em; }
+  .icon { width: 54px; height: 54px; border-radius: 14px; border: 1px solid var(--line); background: #fff; display: grid; place-items: center; }
+  .icon svg { width: 38px; height: 38px; }
+  .note { margin-top: 28px; font-size: 13px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- 1 ㅅㅇ 자모 -->
+    <symbol id="m1" viewBox="0 0 100 100">
+      <path d="M12 80 L36 28 L60 80" fill="none" style="stroke:var(--c1)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="74" cy="60" r="15" fill="none" style="stroke:var(--c2)" stroke-width="11"/>
+    </symbol>
+    <!-- 2 CCTV 렌즈 -->
+    <symbol id="m2" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40" fill="none" style="stroke:var(--c1)" stroke-width="9"/>
+      <circle cx="50" cy="50" r="20" style="fill:var(--c1)"/>
+      <circle cx="58" cy="42" r="6" style="fill:var(--c2)"/>
+      <path d="M50 10 A40 40 0 0 1 90 50" fill="none" style="stroke:var(--c2)" stroke-width="9" stroke-linecap="round"/>
+    </symbol>
+    <!-- 3 문 (출입통제) -->
+    <symbol id="m3" viewBox="0 0 100 100">
+      <rect x="22" y="10" width="56" height="80" rx="8" fill="none" style="stroke:var(--c1)" stroke-width="9"/>
+      <path d="M40 22 L66 30 V78 L40 86 Z" style="fill:var(--c1)"/>
+      <circle cx="57" cy="56" r="5" style="fill:var(--c2)"/>
+    </symbol>
+    <!-- 4 집 + 신호 -->
+    <symbol id="m4" viewBox="0 0 100 100">
+      <path d="M10 50 L50 16 L90 50" fill="none" style="stroke:var(--c1)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="50" cy="84" r="6" style="fill:var(--c2)"/>
+      <path d="M34 72 A20 20 0 0 1 66 72" fill="none" style="stroke:var(--c2)" stroke-width="8" stroke-linecap="round"/>
+      <path d="M22 62 A34 34 0 0 1 78 62" fill="none" style="stroke:var(--c1)" stroke-width="8" stroke-linecap="round"/>
+    </symbol>
+    <!-- 5 육각 너트 + S (시공) -->
+    <symbol id="m5" viewBox="0 0 100 100">
+      <path d="M50 6 L88 28 V72 L50 94 L12 72 V28 Z" fill="none" style="stroke:var(--c1)" stroke-width="8" stroke-linejoin="round"/>
+      <path d="M64 34 H44 Q34 34 34 43 Q34 51 44 51 H56 Q66 51 66 60 Q66 69 56 69 H36" fill="none" style="stroke:var(--c2)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <!-- 6 방패 + 집 -->
+    <symbol id="m6" viewBox="0 0 100 100">
+      <path d="M50 6 L86 19 V47 C86 72 70 87 50 95 C30 87 14 72 14 47 V19 Z" style="fill:var(--c1)"/>
+      <path d="M30 52 L50 35 L70 52 V72 H30 Z" style="fill:var(--h)"/>
+      <rect x="44" y="58" width="12" height="14" rx="2" style="fill:var(--c2)"/>
+    </symbol>
+    <!-- 7 인터폰 -->
+    <symbol id="m7" viewBox="0 0 100 100">
+      <rect x="20" y="6" width="60" height="88" rx="14" style="fill:var(--c1)"/>
+      <circle cx="50" cy="26" r="9" style="fill:var(--c2)"/>
+      <circle cx="50" cy="26" r="3.5" style="fill:var(--h)"/>
+      <g style="fill:var(--h)">
+        <circle cx="38" cy="50" r="3.2"/><circle cx="50" cy="50" r="3.2"/><circle cx="62" cy="50" r="3.2"/>
+        <circle cx="38" cy="61" r="3.2"/><circle cx="50" cy="61" r="3.2"/><circle cx="62" cy="61" r="3.2"/>
+      </g>
+      <rect x="36" y="74" width="28" height="8" rx="4" style="fill:var(--c2)"/>
+    </symbol>
+    <!-- 8 키패드 패턴 S -->
+    <symbol id="m8" viewBox="0 0 100 100">
+      <polyline points="78,22 22,22 22,50 78,50 78,78 22,78" fill="none" style="stroke:var(--c2)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <g style="fill:var(--c1)">
+        <circle cx="22" cy="22" r="8"/><circle cx="50" cy="22" r="8"/><circle cx="78" cy="22" r="8"/>
+        <circle cx="22" cy="50" r="8"/><circle cx="50" cy="50" r="8"/><circle cx="78" cy="50" r="8"/>
+        <circle cx="22" cy="78" r="8"/><circle cx="50" cy="78" r="8"/><circle cx="78" cy="78" r="8"/>
+      </g>
+    </symbol>
+    <!-- 9 랜선 플러그 -->
+    <symbol id="m9" viewBox="0 0 100 100">
+      <rect x="20" y="14" width="60" height="58" rx="9" style="fill:var(--c1)"/>
+      <rect x="38" y="72" width="24" height="16" rx="3" style="fill:var(--c1)"/>
+      <g style="fill:var(--c2)">
+        <rect x="30" y="22" width="4.5" height="16" rx="1"/><rect x="38" y="22" width="4.5" height="16" rx="1"/><rect x="46" y="22" width="4.5" height="16" rx="1"/>
+        <rect x="54" y="22" width="4.5" height="16" rx="1"/><rect x="62" y="22" width="4.5" height="16" rx="1"/>
+      </g>
+      <rect x="32" y="50" width="36" height="8" rx="4" style="fill:var(--h)"/>
+    </symbol>
+    <!-- 10 원형 엠블럼 -->
+    <symbol id="m10" viewBox="0 0 100 100">
+      <defs><path id="ring" d="M50 50 m-37 0 a37 37 0 1 1 74 0 a37 37 0 1 1 -74 0"/></defs>
+      <circle cx="50" cy="50" r="47" fill="none" style="stroke:var(--c1)" stroke-width="3"/>
+      <circle cx="50" cy="50" r="28" style="fill:var(--c1)"/>
+      <text font-family="Pretendard, sans-serif" font-size="7" font-weight="700" letter-spacing="1.6" style="fill:var(--c1)"><textPath href="#ring" startOffset="1%">SHINWOO COMMAX · SEONGNAM · BUNDANG ·</textPath></text>
+      <text x="50" y="58" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="22" font-weight="800" letter-spacing="-1" style="fill:var(--h)">SW</text>
+      <circle cx="73" cy="34" r="4" style="fill:var(--c2)"/>
+    </symbol>
+    <!-- 11 투톤 굵은 S -->
+    <symbol id="m11" viewBox="0 0 100 100">
+      <path d="M76 22 H42 Q24 22 24 37 Q24 50 42 50 H50" fill="none" style="stroke:var(--c1)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M50 50 H58 Q76 50 76 64 Q76 78 58 78 H24" fill="none" style="stroke:var(--c2)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <!-- 12 '신' 타일 -->
+    <symbol id="m12" viewBox="0 0 100 100">
+      <rect x="6" y="6" width="88" height="88" rx="24" style="fill:var(--c1)"/>
+      <text x="50" y="68" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="52" font-weight="800" letter-spacing="-2" style="fill:var(--h)">신</text>
+      <rect x="62" y="16" width="20" height="8" rx="4" style="fill:var(--c2)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <h1>신우코맥스 로고·심볼 샘플 12종</h1>
+  <p class="lead">글자 모양, 제품(렌즈·인터폰·랜선), 보안(문·방패·번호키), 시공(너트) 등 방향을 넓혀 만들었습니다. 색도 다섯 가지 조합으로 바꿔 보았습니다. 마음에 드는 <b>모양</b>과 <b>색</b>을 따로 골라 조합하셔도 됩니다.</p>
+  <div class="legend">
+    <span><i style="--a:#1d3a8a;--b:#f28c28"></i>네이비·오렌지</span>
+    <span><i style="--a:#0b5cad;--b:#16b3a0"></i>블루·청록 (현재)</span>
+    <span><i style="--a:#222831;--b:#f2b705"></i>차콜·옐로</span>
+    <span><i style="--a:#0f7b5f;--b:#8cc63f"></i>그린·라임</span>
+    <span><i style="--a:#c62f2f;--b:#1f2a44"></i>레드·네이비</span>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <p class="note">※ 샘플입니다. 고르시면 다듬어서 SVG·PNG 파일로 만듭니다. 코맥스 본사 로고·상표 디자인은 쓰지 않았습니다.</p>
+</div>
+
+<script>
+  // 샘플 목록: [심볼 id, 이름, 설명, 메인색, 포인트색]
+  var S = [
+    ["m1", "ㅅㅇ 자모", "신우의 첫소리 ㅅ·ㅇ을 기하 도형으로. 지붕(ㅅ)과 렌즈(ㅇ)로도 읽힙니다.", "#1d3a8a", "#f28c28"],
+    ["m2", "CCTV 렌즈", "카메라 렌즈를 단순화. 보안·CCTV 시공 회사라는 인상이 가장 강합니다.", "#222831", "#f2b705"],
+    ["m3", "열린 문", "문틀과 열린 문짝. 출입통제·도어 시공을 직관적으로 보여 줍니다.", "#0b5cad", "#16b3a0"],
+    ["m4", "집 + 신호", "지붕 아래 와이파이 신호. 홈네트워크·월패드 회사에 어울립니다.", "#0f7b5f", "#8cc63f"],
+    ["m5", "너트 + S", "육각 너트 안에 S. '시공 전문' 기술자 느낌을 살렸습니다.", "#c62f2f", "#1f2a44"],
+    ["m6", "방패 + 집", "집을 지키는 방패. 신뢰감이 가장 강한 보안 업체형입니다.", "#1d3a8a", "#f28c28"],
+    ["m7", "인터폰", "카메라와 스피커 구멍이 있는 인터폰 모양. 코맥스 대리점과 잘 맞습니다.", "#0b5cad", "#16b3a0"],
+    ["m8", "번호키 패턴", "9개 버튼 위에 S자 패턴. 번호키·출입통제를 재치 있게 표현합니다.", "#222831", "#f2b705"],
+    ["m9", "랜선 플러그", "LAN 케이블 단자 모양. 네트워크 공사를 강조할 때 좋습니다.", "#0f7b5f", "#8cc63f"],
+    ["m10", "원형 엠블럼", "원 둘레에 영문 이름을 두른 인증 마크형. 차량·작업복 패치에 좋습니다.", "#c62f2f", "#1f2a44"],
+    ["m11", "투톤 S", "두 색으로 나눈 굵은 S. 가장 단순하고 멀리서도 잘 보입니다.", "#1d3a8a", "#f28c28"],
+    ["m12", "'신' 타일", "한글 '신' 한 글자를 타일에. 앱 아이콘·프로필 사진에 바로 쓰기 좋습니다.", "#0b5cad", "#16b3a0"]
+  ];
+  var TAG = "출입통제 · 홈네트워크 · CCTV 시공 전문";
+  var html = S.map(function (s, i) {
+    var u = '<use href="#' + s[0] + '"/>';
+    return '<article class="s" style="--c1:' + s[3] + ';--c2:' + s[4] + ';--base:' + s[3] + '">' +
+      '<div class="top"><svg class="big" viewBox="0 0 100 100">' + u + '</svg>' +
+      '<div><h2><b>' + (i + 1) + '</b>' + s[1] + '</h2><p>' + s[2] + '</p></div></div>' +
+      '<div class="lock"><svg viewBox="0 0 100 100">' + u + '</svg><div><div class="nm">신우코맥스</div><div class="tg">' + TAG + '</div></div></div>' +
+      '<div class="uses"><div class="rev"><svg viewBox="0 0 100 100">' + u + '</svg><b>신우코맥스</b></div>' +
+      '<div class="icon"><svg viewBox="0 0 100 100">' + u + '</svg></div></div>' +
+      '</article>';
+  }).join("");
+  document.getElementById("grid").innerHTML = html;
+</script>
+</body>
+</html>
