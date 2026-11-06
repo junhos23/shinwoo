@@ -3,7 +3,7 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
-const types = { ".html": "text/html; charset=utf-8", ".svg": "image/svg+xml", ".png": "image/png", ".css": "text/css", ".js": "text/javascript" };
+const types = { ".html": "text/html; charset=utf-8", ".svg": "image/svg+xml", ".png": "image/png", ".webp": "image/webp", ".jpg": "image/jpeg", ".css": "text/css", ".js": "text/javascript" };
 
 http.createServer((req, res) => {
   const name = decodeURIComponent(req.url.split("?")[0]).replace(/^\/+/, "") || "index.html";

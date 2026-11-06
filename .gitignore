@@ -10,3 +10,6 @@ Thumbs.db
 *.xlsx
 *.xls
 *.csv
+# 단, 홈페이지에 쓰는 이미지는 커밋
+!assets/**/*.jpg
+!assets/**/*.jpeg
