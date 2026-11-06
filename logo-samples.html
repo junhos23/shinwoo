@@ -40,105 +40,68 @@
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <!-- 1 ㅅㅇ 자모 -->
-    <symbol id="m1" viewBox="0 0 100 100">
-      <path d="M12 80 L36 28 L60 80" fill="none" style="stroke:var(--c1)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="74" cy="60" r="15" fill="none" style="stroke:var(--c2)" stroke-width="11"/>
+    <!-- 1 기본 다듬기 -->
+    <symbol id="d1" viewBox="0 0 100 100">
+      <rect x="22" y="8" width="56" height="84" rx="10" fill="none" style="stroke:var(--c1)" stroke-width="9"/>
+      <path d="M36 19 L66 26 V82 L36 89 Z" style="fill:var(--c2)" stroke-linejoin="round"/>
+      <circle cx="58" cy="56" r="4.5" style="fill:var(--h)"/>
     </symbol>
-    <!-- 2 CCTV 렌즈 -->
-    <symbol id="m2" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="40" fill="none" style="stroke:var(--c1)" stroke-width="9"/>
-      <circle cx="50" cy="50" r="20" style="fill:var(--c1)"/>
-      <circle cx="58" cy="42" r="6" style="fill:var(--c2)"/>
-      <path d="M50 10 A40 40 0 0 1 90 50" fill="none" style="stroke:var(--c2)" stroke-width="9" stroke-linecap="round"/>
+    <!-- 2 문 + 빛 -->
+    <symbol id="d2" viewBox="0 0 100 100">
+      <rect x="22" y="6" width="56" height="78" rx="9" fill="none" style="stroke:var(--c1)" stroke-width="9"/>
+      <path d="M31 15 H69 V75 H31 Z" style="fill:var(--c2)"/>
+      <path d="M31 15 L52 21 V81 L31 75 Z" style="fill:var(--c1)"/>
+      <path d="M31 84 H69 L86 96 H14 Z" style="fill:var(--c2)" opacity=".55"/>
+      <circle cx="46" cy="49" r="3.8" style="fill:var(--h)"/>
     </symbol>
-    <!-- 3 문 (출입통제) -->
-    <symbol id="m3" viewBox="0 0 100 100">
-      <rect x="22" y="10" width="56" height="80" rx="8" fill="none" style="stroke:var(--c1)" stroke-width="9"/>
-      <path d="M40 22 L66 30 V78 L40 86 Z" style="fill:var(--c1)"/>
-      <circle cx="57" cy="56" r="5" style="fill:var(--c2)"/>
+    <!-- 3 아치 문 -->
+    <symbol id="d3" viewBox="0 0 100 100">
+      <path d="M22 92 V38 A28 28 0 0 1 78 38 V92 Z" fill="none" style="stroke:var(--c1)" stroke-width="9" stroke-linejoin="round"/>
+      <path d="M37 87 V46 A13 13 0 0 1 52 33 L64 37 V82 Z" style="fill:var(--c2)"/>
+      <circle cx="58" cy="58" r="4.5" style="fill:var(--h)"/>
     </symbol>
-    <!-- 4 집 + 신호 -->
-    <symbol id="m4" viewBox="0 0 100 100">
-      <path d="M10 50 L50 16 L90 50" fill="none" style="stroke:var(--c1)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="50" cy="84" r="6" style="fill:var(--c2)"/>
-      <path d="M34 72 A20 20 0 0 1 66 72" fill="none" style="stroke:var(--c2)" stroke-width="8" stroke-linecap="round"/>
-      <path d="M22 62 A34 34 0 0 1 78 62" fill="none" style="stroke:var(--c1)" stroke-width="8" stroke-linecap="round"/>
+    <!-- 4 입체 문짝 -->
+    <symbol id="d4" viewBox="0 0 100 100">
+      <rect x="20" y="7" width="60" height="86" rx="10" fill="none" style="stroke:var(--c1)" stroke-width="10"/>
+      <path d="M34 18 L64 26 V83 L34 90 Z" style="fill:var(--c2)"/>
+      <path d="M64 26 L70 24 V85 L64 83 Z" style="fill:var(--c1)" opacity=".85"/>
+      <circle cx="56" cy="56" r="4.5" style="fill:var(--h)"/>
     </symbol>
-    <!-- 5 육각 너트 + S (시공) -->
-    <symbol id="m5" viewBox="0 0 100 100">
-      <path d="M50 6 L88 28 V72 L50 94 L12 72 V28 Z" fill="none" style="stroke:var(--c1)" stroke-width="8" stroke-linejoin="round"/>
-      <path d="M64 34 H44 Q34 34 34 43 Q34 51 44 51 H56 Q66 51 66 60 Q66 69 56 69 H36" fill="none" style="stroke:var(--c2)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- 5 타일 안 문 -->
+    <symbol id="d5" viewBox="0 0 100 100">
+      <rect x="4" y="4" width="92" height="92" rx="24" style="fill:var(--c1)"/>
+      <rect x="29" y="17" width="42" height="66" rx="7" fill="none" style="stroke:var(--h)" stroke-width="7"/>
+      <path d="M38 25 L62 31 V75 L38 81 Z" style="fill:var(--c2)"/>
+      <circle cx="56" cy="53" r="3.5" style="fill:var(--h)"/>
     </symbol>
-    <!-- 6 방패 + 집 -->
-    <symbol id="m6" viewBox="0 0 100 100">
-      <path d="M50 6 L86 19 V47 C86 72 70 87 50 95 C30 87 14 72 14 47 V19 Z" style="fill:var(--c1)"/>
-      <path d="M30 52 L50 35 L70 52 V72 H30 Z" style="fill:var(--h)"/>
-      <rect x="44" y="58" width="12" height="14" rx="2" style="fill:var(--c2)"/>
+    <!-- 6 문 + 열쇠구멍 -->
+    <symbol id="d6" viewBox="0 0 100 100">
+      <rect x="22" y="8" width="56" height="84" rx="10" fill="none" style="stroke:var(--c1)" stroke-width="9"/>
+      <path d="M36 19 L66 26 V82 L36 89 Z" style="fill:var(--c2)"/>
+      <circle cx="51" cy="50" r="5.5" style="fill:var(--h)"/>
+      <path d="M48 53 H54 L55.5 66 H46.5 Z" style="fill:var(--h)"/>
     </symbol>
-    <!-- 7 인터폰 -->
-    <symbol id="m7" viewBox="0 0 100 100">
-      <rect x="20" y="6" width="60" height="88" rx="14" style="fill:var(--c1)"/>
-      <circle cx="50" cy="26" r="9" style="fill:var(--c2)"/>
-      <circle cx="50" cy="26" r="3.5" style="fill:var(--h)"/>
-      <g style="fill:var(--h)">
-        <circle cx="38" cy="50" r="3.2"/><circle cx="50" cy="50" r="3.2"/><circle cx="62" cy="50" r="3.2"/>
-        <circle cx="38" cy="61" r="3.2"/><circle cx="50" cy="61" r="3.2"/><circle cx="62" cy="61" r="3.2"/>
-      </g>
-      <rect x="36" y="74" width="28" height="8" rx="4" style="fill:var(--c2)"/>
+    <!-- 7 문 + 출입통제기 -->
+    <symbol id="d7" viewBox="0 0 100 100">
+      <rect x="8" y="8" width="54" height="84" rx="10" fill="none" style="stroke:var(--c1)" stroke-width="9"/>
+      <path d="M21 19 L50 26 V82 L21 89 Z" style="fill:var(--c2)"/>
+      <circle cx="43" cy="56" r="4.2" style="fill:var(--h)"/>
+      <rect x="72" y="40" width="20" height="30" rx="6" style="fill:var(--c1)"/>
+      <circle cx="82" cy="50" r="4" style="fill:var(--c2)"/>
+      <rect x="77" y="58" width="10" height="4" rx="2" style="fill:var(--h)"/>
     </symbol>
-    <!-- 8 키패드 패턴 S -->
-    <symbol id="m8" viewBox="0 0 100 100">
-      <polyline points="78,22 22,22 22,50 78,50 78,78 22,78" fill="none" style="stroke:var(--c2)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-      <g style="fill:var(--c1)">
-        <circle cx="22" cy="22" r="8"/><circle cx="50" cy="22" r="8"/><circle cx="78" cy="22" r="8"/>
-        <circle cx="22" cy="50" r="8"/><circle cx="50" cy="50" r="8"/><circle cx="78" cy="50" r="8"/>
-        <circle cx="22" cy="78" r="8"/><circle cx="50" cy="78" r="8"/><circle cx="78" cy="78" r="8"/>
-      </g>
-    </symbol>
-    <!-- 9 랜선 플러그 -->
-    <symbol id="m9" viewBox="0 0 100 100">
-      <rect x="20" y="14" width="60" height="58" rx="9" style="fill:var(--c1)"/>
-      <rect x="38" y="72" width="24" height="16" rx="3" style="fill:var(--c1)"/>
-      <g style="fill:var(--c2)">
-        <rect x="30" y="22" width="4.5" height="16" rx="1"/><rect x="38" y="22" width="4.5" height="16" rx="1"/><rect x="46" y="22" width="4.5" height="16" rx="1"/>
-        <rect x="54" y="22" width="4.5" height="16" rx="1"/><rect x="62" y="22" width="4.5" height="16" rx="1"/>
-      </g>
-      <rect x="32" y="50" width="36" height="8" rx="4" style="fill:var(--h)"/>
-    </symbol>
-    <!-- 10 원형 엠블럼 -->
-    <symbol id="m10" viewBox="0 0 100 100">
-      <defs><path id="ring" d="M50 50 m-37 0 a37 37 0 1 1 74 0 a37 37 0 1 1 -74 0"/></defs>
-      <circle cx="50" cy="50" r="47" fill="none" style="stroke:var(--c1)" stroke-width="3"/>
-      <circle cx="50" cy="50" r="28" style="fill:var(--c1)"/>
-      <text font-family="Pretendard, sans-serif" font-size="7" font-weight="700" letter-spacing="1.6" style="fill:var(--c1)"><textPath href="#ring" startOffset="1%">SHINWOO COMMAX · SEONGNAM · BUNDANG ·</textPath></text>
-      <text x="50" y="58" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="22" font-weight="800" letter-spacing="-1" style="fill:var(--h)">SW</text>
-      <circle cx="73" cy="34" r="4" style="fill:var(--c2)"/>
-    </symbol>
-    <!-- 11 투톤 굵은 S -->
-    <symbol id="m11" viewBox="0 0 100 100">
-      <path d="M76 22 H42 Q24 22 24 37 Q24 50 42 50 H50" fill="none" style="stroke:var(--c1)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M50 50 H58 Q76 50 76 64 Q76 78 58 78 H24" fill="none" style="stroke:var(--c2)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <!-- 12 '신' 타일 -->
-    <symbol id="m12" viewBox="0 0 100 100">
-      <rect x="6" y="6" width="88" height="88" rx="24" style="fill:var(--c1)"/>
-      <text x="50" y="68" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="52" font-weight="800" letter-spacing="-2" style="fill:var(--h)">신</text>
-      <rect x="62" y="16" width="20" height="8" rx="4" style="fill:var(--c2)"/>
+    <!-- 8 선형 미니멀 -->
+    <symbol id="d8" viewBox="0 0 100 100">
+      <rect x="22" y="8" width="56" height="84" rx="10" fill="none" style="stroke:var(--c1)" stroke-width="8"/>
+      <path d="M38 20 L64 27 V81 L38 88 Z" fill="none" style="stroke:var(--c2)" stroke-width="8" stroke-linejoin="round"/>
+      <circle cx="56" cy="55" r="4.5" style="fill:var(--c2)"/>
     </symbol>
   </defs>
 </svg>
 
 <div class="wrap">
-  <h1>신우코맥스 로고·심볼 샘플 12종</h1>
-  <p class="lead">글자 모양, 제품(렌즈·인터폰·랜선), 보안(문·방패·번호키), 시공(너트) 등 방향을 넓혀 만들었습니다. 색도 다섯 가지 조합으로 바꿔 보았습니다. 마음에 드는 <b>모양</b>과 <b>색</b>을 따로 골라 조합하셔도 됩니다.</p>
-  <div class="legend">
-    <span><i style="--a:#1d3a8a;--b:#f28c28"></i>네이비·오렌지</span>
-    <span><i style="--a:#0b5cad;--b:#16b3a0"></i>블루·청록 (현재)</span>
-    <span><i style="--a:#222831;--b:#f2b705"></i>차콜·옐로</span>
-    <span><i style="--a:#0f7b5f;--b:#8cc63f"></i>그린·라임</span>
-    <span><i style="--a:#c62f2f;--b:#1f2a44"></i>레드·네이비</span>
-  </div>
+  <h1>신우코맥스 로고 샘플 · 열린 문 다듬기</h1>
+  <p class="lead">2차 샘플 1번 <b>열린 문</b>을 바탕으로 비율·모양·의미를 바꿔 본 8가지입니다. 색은 블루(#0b5cad) + 청록(#16b3a0) 투톤입니다.</p>
 
   <div class="grid" id="grid"></div>
   <p class="note">※ 샘플입니다. 고르시면 다듬어서 SVG·PNG 파일로 만듭니다. 코맥스 본사 로고·상표 디자인은 쓰지 않았습니다.</p>
@@ -147,18 +110,14 @@
 <script>
   // 샘플 목록: [심볼 id, 이름, 설명, 메인색, 포인트색]
   var S = [
-    ["m1", "ㅅㅇ 자모", "신우의 첫소리 ㅅ·ㅇ을 기하 도형으로. 지붕(ㅅ)과 렌즈(ㅇ)로도 읽힙니다.", "#1d3a8a", "#f28c28"],
-    ["m2", "CCTV 렌즈", "카메라 렌즈를 단순화. 보안·CCTV 시공 회사라는 인상이 가장 강합니다.", "#222831", "#f2b705"],
-    ["m3", "열린 문", "문틀과 열린 문짝. 출입통제·도어 시공을 직관적으로 보여 줍니다.", "#0b5cad", "#16b3a0"],
-    ["m4", "집 + 신호", "지붕 아래 와이파이 신호. 홈네트워크·월패드 회사에 어울립니다.", "#0f7b5f", "#8cc63f"],
-    ["m5", "너트 + S", "육각 너트 안에 S. '시공 전문' 기술자 느낌을 살렸습니다.", "#c62f2f", "#1f2a44"],
-    ["m6", "방패 + 집", "집을 지키는 방패. 신뢰감이 가장 강한 보안 업체형입니다.", "#1d3a8a", "#f28c28"],
-    ["m7", "인터폰", "카메라와 스피커 구멍이 있는 인터폰 모양. 코맥스 대리점과 잘 맞습니다.", "#0b5cad", "#16b3a0"],
-    ["m8", "번호키 패턴", "9개 버튼 위에 S자 패턴. 번호키·출입통제를 재치 있게 표현합니다.", "#222831", "#f2b705"],
-    ["m9", "랜선 플러그", "LAN 케이블 단자 모양. 네트워크 공사를 강조할 때 좋습니다.", "#0f7b5f", "#8cc63f"],
-    ["m10", "원형 엠블럼", "원 둘레에 영문 이름을 두른 인증 마크형. 차량·작업복 패치에 좋습니다.", "#c62f2f", "#1f2a44"],
-    ["m11", "투톤 S", "두 색으로 나눈 굵은 S. 가장 단순하고 멀리서도 잘 보입니다.", "#1d3a8a", "#f28c28"],
-    ["m12", "'신' 타일", "한글 '신' 한 글자를 타일에. 앱 아이콘·프로필 사진에 바로 쓰기 좋습니다.", "#0b5cad", "#16b3a0"]
+    ["d1", "기본 다듬기", "2차 1번을 정리한 안. 문틀 모서리를 둥글게, 문짝 비율을 바로잡았습니다.", "#0b5cad", "#16b3a0"],
+    ["d2", "문 + 빛", "문이 열리며 청록 빛이 새어 나오는 모습. \"새 공간을 열어 준다\"는 느낌입니다.", "#0b5cad", "#16b3a0"],
+    ["d3", "아치 문", "윗부분을 둥근 아치로. 부드럽고 친근한 인상, 주거 공간에 어울립니다.", "#0b5cad", "#16b3a0"],
+    ["d4", "입체 문짝", "문짝 옆면에 두께를 넣어 입체감을 살렸습니다. 간판에서 존재감이 큽니다.", "#0b5cad", "#16b3a0"],
+    ["d5", "타일 안 문", "파란 타일 안에 흰 문틀. 앱 아이콘·프로필·스티커로 바로 쓰기 좋습니다.", "#0b5cad", "#16b3a0"],
+    ["d6", "문 + 열쇠구멍", "문짝에 열쇠구멍. 출입통제·도어락 시공을 가장 분명하게 보여 줍니다.", "#0b5cad", "#16b3a0"],
+    ["d7", "문 + 출입통제기", "문 옆 벽에 카드리더기. 출입통제 시스템 회사라는 점을 구체적으로 표현합니다.", "#0b5cad", "#16b3a0"],
+    ["d8", "선형 미니멀", "면 대신 선으로만. 가볍고 세련된 느낌, 인쇄·자수(작업복)에도 깔끔합니다.", "#0b5cad", "#16b3a0"]
   ];
   var TAG = "출입통제 · 홈네트워크 · CCTV 시공 전문";
   var html = S.map(function (s, i) {
