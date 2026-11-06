@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>신우코맥스</title>
+<meta name="description" content="신우코맥스 - 성남 분당 궁내동 코맥스 대리점. 월패드·비디오폰 교체, 출입통제, 네트워크 공사 전문">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M69 17 H38 Q23 17 23 33 Q23 49 39 49 H60 Q76 49 76 65 Q76 82 60 82 H30' fill='none' stroke='%230b5cad' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='69' cy='17' r='9' fill='%2316b3a0'/%3E%3Ccircle cx='49.5' cy='49' r='7' fill='%23fff' stroke='%2316b3a0' stroke-width='4'/%3E%3Ccircle cx='30' cy='82' r='9' fill='%2316b3a0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f4f7fa;
+    --ink: #13202e;
+    --ink-soft: #566577;
+    --line: #e1e7ed;
+    --brand: #0b5cad;
+    --brand-deep: #083f78;
+    --accent: #16b3a0;
+    --naver: #03c75a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e151d; --bg-soft: #141e29; --ink: #e8eef4; --ink-soft: #9aa9b8;
+      --line: #26333f; --brand: #4a98e6; --brand-deep: #0b2f57; --accent: #2dd4bf;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e151d; --bg-soft: #141e29; --ink: #e8eef4; --ink-soft: #9aa9b8;
+    --line: #26333f; --brand: #4a98e6; --brand-deep: #0b2f57; --accent: #2dd4bf;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body {
+    font-family: "Noto Sans KR", system-ui, sans-serif;
+    background: var(--bg); color: var(--ink);
+    line-height: 1.7; word-break: keep-all;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 90%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 20px; letter-spacing: -0.02em; }
+  .logo-mark { width: 36px; height: 36px; flex: none; }
+  .logo small { font-size: 12px; font-weight: 500; color: var(--ink-soft); margin-left: 2px; }
+  .nav ul { display: flex; gap: 26px; list-style: none; font-weight: 500; font-size: 15px; }
+  .nav ul a:hover { color: var(--brand); }
+  .nav-call { padding: 8px 16px; border-radius: 999px; background: var(--brand); color: #fff; font-weight: 700; font-size: 14px; white-space: nowrap; }
+  @media (max-width: 860px) { .nav ul { display: none; } }
+  @media (max-width: 480px) { .logo small, .nav-call .num { display: none; } }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(circle at 85% 20%, color-mix(in srgb, var(--accent) 35%, transparent), transparent 45%),
+      linear-gradient(135deg, var(--brand-deep), #0b5cad);
+    color: #fff; padding: 96px 0 0; position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: linear-gradient(to left, #000, transparent 70%);
+  }
+  .hero .wrap { position: relative; z-index: 1; }
+  .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: rgba(255,255,255,.14); font-size: 13px; font-weight: 700; margin-bottom: 22px; }
+  .badge i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .hero h1 { font-size: clamp(32px, 5.5vw, 54px); line-height: 1.25; font-weight: 900; letter-spacing: -0.03em; }
+  .hero p { margin-top: 20px; font-size: clamp(16px, 2vw, 18px); max-width: 580px; opacity: .9; }
+  .btns { margin-top: 34px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 14px 28px; border-radius: 999px; font-weight: 700; font-size: 15px; transition: transform .15s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-light { background: #fff; color: var(--brand-deep); }
+  .btn-ghost { border: 1.5px solid rgba(255,255,255,.6); color: #fff; }
+
+  /* Quick menu (hero bottom) */
+  .quick {
+    margin-top: 72px; display: grid; grid-template-columns: repeat(4, 1fr);
+    background: var(--bg); color: var(--ink); border-radius: 18px 18px 0 0;
+    border: 1px solid var(--line); border-bottom: 0; overflow: hidden;
+  }
+  .quick a { padding: 22px 20px; display: flex; gap: 12px; align-items: center; border-right: 1px solid var(--line); transition: background .2s; }
+  .quick a:last-child { border-right: 0; }
+  .quick a:hover { background: var(--bg-soft); }
+  .quick svg { width: 26px; height: 26px; color: var(--brand); flex: none; }
+  .quick b { display: block; font-size: 15px; }
+  .quick span { font-size: 13px; color: var(--ink-soft); }
+  @media (max-width: 760px) {
+    .quick { grid-template-columns: 1fr 1fr; }
+    .quick a:nth-child(2) { border-right: 0; }
+    .quick a:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  }
+
+  /* Sections */
+  section { padding: 88px 0; }
+  .sec-head { margin-bottom: 44px; max-width: 640px; }
+  .sec-head .tag { color: var(--brand); font-weight: 700; font-size: 13px; letter-spacing: .12em; }
+  .sec-head h2 { font-size: clamp(26px, 3.6vw, 34px); font-weight: 900; letter-spacing: -0.02em; margin-top: 6px; }
+  .sec-head p { color: var(--ink-soft); margin-top: 10px; }
+  .soft { background: var(--bg-soft); }
+
+  /* Services */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+  .card { border: 1px solid var(--line); border-radius: 18px; padding: 32px 28px; background: var(--bg); transition: border-color .2s, transform .2s; }
+  .card:hover { border-color: var(--brand); transform: translateY(-4px); }
+  .icon { width: 54px; height: 54px; border-radius: 14px; background: color-mix(in srgb, var(--brand) 12%, transparent); color: var(--brand); display: grid; place-items: center; margin-bottom: 20px; }
+  .icon svg { width: 28px; height: 28px; }
+  .card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .card p { color: var(--ink-soft); font-size: 15px; }
+  .card ul { margin-top: 16px; list-style: none; display: grid; gap: 6px; font-size: 14px; }
+  .card li::before { content: "✓"; color: var(--accent); font-weight: 900; margin-right: 8px; }
+  .card .for { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line); font-size: 13px; color: var(--ink-soft); }
+  .card .for b { color: var(--ink); }
+
+  /* Products */
+  .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .product { padding: 24px; border-radius: 16px; background: var(--bg); border: 1px solid var(--line); }
+  .product .kind { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: .06em; }
+  .product h4 { font-size: 17px; margin: 4px 0 6px; }
+  .product p { font-size: 14px; color: var(--ink-soft); }
+  .hint { margin-top: 20px; font-size: 14px; color: var(--ink-soft); }
+
+  /* Cases */
+  .cases { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+  .case { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: var(--bg); }
+  .case .thumb {
+    aspect-ratio: 16 / 9; display: grid; place-items: center; color: var(--ink-soft); font-size: 13px;
+    background:
+      repeating-linear-gradient(45deg, transparent 0 12px, color-mix(in srgb, var(--brand) 6%, transparent) 12px 24px),
+      var(--bg-soft);
+  }
+  .case .body { padding: 22px 24px 26px; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .chip { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: color-mix(in srgb, var(--brand) 12%, transparent); color: var(--brand); }
+  .chip.alt { background: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--accent); }
+  .case h4 { font-size: 18px; margin-bottom: 6px; }
+  .case p { font-size: 14px; color: var(--ink-soft); }
+  .case dl { margin-top: 14px; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 13px; }
+  .case dt { color: var(--ink-soft); }
+
+  /* Why */
+  .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+  .why div { padding: 26px; border-radius: 16px; background: var(--bg); border: 1px solid var(--line); }
+  .why b { display: block; font-size: 28px; font-weight: 900; color: var(--brand); line-height: 1; margin-bottom: 12px; }
+  .why h4 { font-size: 17px; margin-bottom: 6px; }
+  .why p { color: var(--ink-soft); font-size: 14px; }
+
+  /* Process */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; counter-reset: s; }
+  .step { padding: 22px 18px; border-top: 3px solid var(--brand); }
+  .step::before { counter-increment: s; content: "STEP 0" counter(s); font-weight: 900; color: var(--accent); font-size: 12px; letter-spacing: .06em; }
+  .step h4 { margin: 6px 0 4px; font-size: 17px; }
+  .step p { color: var(--ink-soft); font-size: 14px; }
+
+  /* Area */
+  .area { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center; }
+  @media (max-width: 760px) { .area { grid-template-columns: 1fr; } }
+  .area-list { display: flex; flex-wrap: wrap; gap: 10px; }
+  .area-list span { padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); font-weight: 500; font-size: 15px; }
+  .area-list span.main { border-color: var(--brand); color: var(--brand); font-weight: 700; }
+
+  /* FAQ */
+  .faq { display: grid; gap: 12px; max-width: 820px; }
+  .faq details { border: 1px solid var(--line); border-radius: 14px; background: var(--bg); padding: 0 22px; }
+  .faq summary { cursor: pointer; list-style: none; padding: 18px 0; font-weight: 700; display: flex; justify-content: space-between; gap: 12px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: var(--brand); font-size: 20px; line-height: 1; }
+  .faq details[open] summary::after { content: "−"; }
+  .faq details p { padding: 0 0 20px; color: var(--ink-soft); font-size: 15px; }
+  .faq summary span::before { content: "Q. "; color: var(--brand); }
+
+  /* Contact */
+  .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  @media (max-width: 760px) { .contact { grid-template-columns: 1fr; } }
+  .info { display: grid; gap: 16px; }
+  .info div { display: flex; gap: 14px; }
+  .info dt { min-width: 64px; font-weight: 700; color: var(--brand); }
+  .info dd { color: var(--ink-soft); }
+  .map-card {
+    display: flex; align-items: center; gap: 16px; margin-top: 8px;
+    padding: 22px; border-radius: 16px; border: 1px solid var(--line);
+    background:
+      linear-gradient(color-mix(in srgb, var(--naver) 6%, transparent) 1px, transparent 1px) 0 0 / 22px 22px,
+      linear-gradient(90deg, color-mix(in srgb, var(--naver) 6%, transparent) 1px, transparent 1px) 0 0 / 22px 22px,
+      var(--bg);
+    transition: border-color .2s, transform .2s;
+  }
+  .map-card:hover { border-color: var(--naver); transform: translateY(-2px); }
+  .map-pin { flex: none; width: 48px; height: 48px; border-radius: 50%; background: var(--naver); color: #fff; display: grid; place-items: center; }
+  .map-pin svg { width: 24px; height: 24px; }
+  .map-text { display: grid; }
+  .map-text span { color: var(--ink-soft); font-size: 14px; }
+  form { display: grid; gap: 12px; padding: 30px; border-radius: 18px; background: var(--bg); border: 1px solid var(--line); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 480px) { .row { grid-template-columns: 1fr; } }
+  input, select, textarea { font: inherit; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg-soft); color: var(--ink); width: 100%; }
+  textarea { min-height: 110px; resize: vertical; }
+  form button { border: 0; cursor: pointer; background: var(--brand); color: #fff; padding: 14px; border-radius: 10px; font: inherit; font-weight: 700; }
+  form button:hover { background: var(--brand-deep); }
+  .note { font-size: 13px; color: var(--ink-soft); }
+
+  footer { border-top: 1px solid var(--line); padding: 32px 0 96px; font-size: 13px; color: var(--ink-soft); }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (min-width: 761px) { footer { padding-bottom: 32px; } }
+
+  /* Mobile call bar */
+  .callbar { display: none; }
+  @media (max-width: 760px) {
+    .callbar {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+      padding: 10px 12px; background: var(--bg); border-top: 1px solid var(--line);
+    }
+    .callbar a { text-align: center; padding: 12px; border-radius: 12px; font-weight: 700; font-size: 15px; }
+    .callbar .call { background: var(--brand); color: #fff; }
+    .callbar .ask { border: 1px solid var(--line); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">
+      <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M69 17 H38 Q23 17 23 33 Q23 49 39 49 H60 Q76 49 76 65 Q76 82 60 82 H30" fill="none" style="stroke:var(--brand)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="69" cy="17" r="9" style="fill:var(--accent);stroke:var(--bg)" stroke-width="3"/>
+        <circle cx="49.5" cy="49" r="7" style="fill:var(--bg);stroke:var(--accent)" stroke-width="4"/>
+        <circle cx="30" cy="82" r="9" style="fill:var(--accent);stroke:var(--bg)" stroke-width="3"/>
+      </svg>신우코맥스<small>코맥스 대리점</small></a>
+    <ul>
+      <li><a href="#services">사업분야</a></li>
+      <li><a href="#products">취급제품</a></li>
+      <li><a href="#cases">시공사례</a></li>
+      <li><a href="#process">진행절차</a></li>
+      <li><a href="#faq">자주 묻는 질문</a></li>
+    </ul>
+    <!-- 실제 전화번호로 바꿔 주세요 -->
+    <a href="tel:000-0000-0000" class="nav-call">전화 상담<span class="num"> 000-0000-0000</span></a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="badge"><i></i>COMMAX 대리점 · 성남 분당 궁내동</div>
+    <h1>월패드·비디오폰 교체부터<br>출입통제·네트워크까지</h1>
+    <p>코맥스 대리점 신우코맥스가 우리 집과 건물에 맞는 제품을 제안하고, 설치부터 A/S까지 직접 책임집니다.</p>
+    <div class="btns">
+      <a href="#contact" class="btn btn-light">무료 견적 문의</a>
+      <a href="#cases" class="btn btn-ghost">시공사례 보기</a>
+    </div>
+
+    <nav class="quick" aria-label="빠른 메뉴">
+      <a href="#services">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><rect x="7" y="6" width="10" height="7" rx="1"/><path d="M9 17h6"/></svg>
+        <div><b>월패드·비디오폰</b><span>교체·신규 설치</span></div>
+      </a>
+      <a href="#services">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <div><b>출입통제</b><span>카드·번호·근태</span></div>
+      </a>
+      <a href="#services">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-3h14v3"/></svg>
+        <div><b>네트워크 공사</b><span>배선·통신실·AP</span></div>
+      </a>
+      <a href="#contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>
+        <div><b>A/S 접수</b><span>고장·점검 요청</span></div>
+      </a>
+    </nav>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">SERVICES</div>
+      <h2>사업분야</h2>
+      <p>아파트 세대부터 오피스·상가·공장까지, 현장에 맞는 시스템을 설계하고 시공합니다.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><rect x="10" y="14" width="4" height="6"/></svg>
+        </div>
+        <h3>홈오토메이션</h3>
+        <p>코맥스 대리점으로서 월패드·비디오폰 등 코맥스 제품을 판매·설치하고 관리합니다.</p>
+        <ul>
+          <li>세대 월패드·비디오폰 교체</li>
+          <li>공동현관 로비폰·경비실 연동</li>
+          <li>도어락 연동, 현관 카메라 추가</li>
+          <li>노후·단종 제품 호환 교체</li>
+        </ul>
+        <p class="for"><b>이런 분께</b> · 화면이 안 나오거나 문열림이 안 될 때, 오래된 인터폰을 바꾸고 싶을 때</p>
+      </article>
+      <article class="card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.5"/></svg>
+        </div>
+        <h3>출입통제 시스템</h3>
+        <p>허가된 사람만 드나들 수 있도록 출입문 관리 시스템을 구축합니다.</p>
+        <ul>
+          <li>카드·비밀번호 출입통제기</li>
+          <li>EM락·데드볼트 등 전기정 설치</li>
+          <li>자동문·스피드게이트 연동</li>
+          <li>근태관리·출입기록 시스템</li>
+        </ul>
+        <p class="for"><b>이런 분께</b> · 사무실·공장 출입 관리, 공용 출입문 보안 강화가 필요할 때</p>
+      </article>
+      <article class="card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-3h14v3"/></svg>
+        </div>
+        <h3>네트워크 공사</h3>
+        <p>안정적인 유·무선 통신 환경을 위한 배선과 장비 구축을 수행합니다.</p>
+        <ul>
+          <li>LAN·광케이블 구내 배선</li>
+          <li>통신실·랙 정리 및 구축</li>
+          <li>무선 AP 설치</li>
+          <li>CCTV 네트워크 연동</li>
+        </ul>
+        <p class="for"><b>이런 분께</b> · 사무실 이전·확장, 인터넷이 자주 끊기거나 선이 엉켜 있을 때</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="soft">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">PRODUCTS</div>
+      <h2>취급제품</h2>
+      <p>코맥스 정품을 중심으로 현장 조건과 예산에 맞는 제품을 추천해 드립니다.</p>
+    </div>
+    <div class="products">
+      <div class="product"><div class="kind">HOME</div><h4>월패드</h4><p>방문자 확인, 문열림, 세대 기기 제어를 한 화면에서</p></div>
+      <div class="product"><div class="kind">HOME</div><h4>비디오폰</h4><p>단독·빌라·상가에 맞는 기본형부터 대화면까지</p></div>
+      <div class="product"><div class="kind">BUILDING</div><h4>로비폰·경비실기</h4><p>공동현관 호출과 경비실 통화 연동</p></div>
+      <div class="product"><div class="kind">SECURITY</div><h4>출입통제기</h4><p>카드·비밀번호 인증과 출입기록 관리</p></div>
+      <div class="product"><div class="kind">SECURITY</div><h4>CCTV</h4><p>현관·주차장·공용부 영상 감시</p></div>
+      <div class="product"><div class="kind">NETWORK</div><h4>네트워크 장비</h4><p>스위치·공유기·무선 AP 구성</p></div>
+    </div>
+    <p class="hint">※ 사용 중인 제품의 모델명(기기 뒷면 또는 옆면 스티커)을 알려 주시면 호환 제품을 더 정확히 안내해 드릴 수 있습니다.</p>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">CASES</div>
+      <h2>시공사례</h2>
+      <p>현장별로 어떤 문제를 어떻게 해결했는지 소개합니다.</p>
+    </div>
+    <!-- 아래는 예시입니다. 실제 시공 사진과 내용으로 바꿔 주세요 -->
+    <div class="cases">
+      <article class="case">
+        <div class="thumb">시공 사진 자리</div>
+        <div class="body">
+          <div class="chips"><span class="chip">홈오토메이션</span><span class="chip alt">아파트</span></div>
+          <h4>노후 월패드 교체 (예시)</h4>
+          <p>화면이 나오지 않던 구형 월패드를 공동현관과 호환되는 신형 제품으로 교체했습니다.</p>
+          <dl><dt>지역</dt><dd>성남시 분당구</dd><dt>작업</dt><dd>세대 월패드 교체, 동작 점검</dd></dl>
+        </div>
+      </article>
+      <article class="case">
+        <div class="thumb">시공 사진 자리</div>
+        <div class="body">
+          <div class="chips"><span class="chip">출입통제</span><span class="chip alt">사무실</span></div>
+          <h4>사무실 출입통제 구축 (예시)</h4>
+          <p>출입문에 카드 리더기와 전기정을 설치하고, 직원별 출입 권한을 설정했습니다.</p>
+          <dl><dt>지역</dt><dd>성남시 판교</dd><dt>작업</dt><dd>카드 리더기, EM락, 출입기록 설정</dd></dl>
+        </div>
+      </article>
+      <article class="case">
+        <div class="thumb">시공 사진 자리</div>
+        <div class="body">
+          <div class="chips"><span class="chip">네트워크</span><span class="chip alt">상가</span></div>
+          <h4>매장 네트워크 정비 (예시)</h4>
+          <p>엉켜 있던 배선을 정리하고 랙을 새로 구성해 끊김 없는 인터넷 환경을 만들었습니다.</p>
+          <dl><dt>지역</dt><dd>용인시 수지구</dd><dt>작업</dt><dd>LAN 재배선, 랙 정리, 무선 AP</dd></dl>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="soft">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">WHY US</div>
+      <h2>신우코맥스를 선택하는 이유</h2>
+    </div>
+    <div class="why">
+      <div><b>01</b><h4>코맥스 대리점</h4><p>코맥스 제품을 대리점에서 직접 공급하고 설치까지 책임집니다.</p></div>
+      <div><b>02</b><h4>원스톱 시공</h4><p>홈오토·출입통제·네트워크를 한 업체에서 통합 설계하고 시공합니다.</p></div>
+      <div><b>03</b><h4>기존 배선 최대 활용</h4><p>현장을 먼저 확인해 가능한 경우 기존 배선을 살려 공사 범위와 비용을 줄입니다.</p></div>
+      <div><b>04</b><h4>가까운 지역 업체</h4><p>성남 분당 궁내동에 있어 인근 현장에 빠르게 방문하고 A/S에 대응합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">PROCESS</div>
+      <h2>진행절차</h2>
+      <p>상담부터 사후 관리까지 투명하게 진행합니다.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h4>상담 접수</h4><p>전화나 문의 양식으로 요청 사항을 남겨 주세요.</p></div>
+      <div class="step"><h4>현장 확인</h4><p>방문해 기존 제품·배선 상태와 요구 사항을 확인합니다.</p></div>
+      <div class="step"><h4>제품 제안·견적</h4><p>호환 제품과 공사 범위, 견적을 안내합니다.</p></div>
+      <div class="step"><h4>시공</h4><p>약속한 일정에 맞춰 깔끔하게 시공합니다.</p></div>
+      <div class="step"><h4>점검·A/S</h4><p>동작을 함께 확인하고 사후 관리를 이어갑니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="area" class="soft">
+  <div class="wrap area">
+    <div class="sec-head" style="margin-bottom:0">
+      <div class="tag">SERVICE AREA</div>
+      <h2>서비스 지역</h2>
+      <p>성남 분당 궁내동을 중심으로 인근 지역을 방문합니다. 그 밖의 지역은 문의해 주세요.</p>
+    </div>
+    <!-- 실제 서비스 지역에 맞게 바꿔 주세요 -->
+    <div class="area-list">
+      <span class="main">성남시 분당구</span>
+      <span>판교</span>
+      <span>성남시 수정구</span>
+      <span>성남시 중원구</span>
+      <span>용인시 수지구</span>
+      <span>의왕·과천</span>
+      <span>서울 강남권</span>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">FAQ</div>
+      <h2>자주 묻는 질문</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary><span>아파트 월패드도 세대에서 개별로 교체할 수 있나요?</span></summary>
+        <p>네, 가능합니다. 다만 공동현관·경비실과 연결되는 방식이 단지마다 달라서 호환되는 제품을 써야 합니다. 사용 중인 제품 모델명을 알려 주시면 맞는 제품을 확인해 드립니다.</p>
+      </details>
+      <details>
+        <summary><span>기존 배선을 그대로 쓸 수 있나요?</span></summary>
+        <p>대부분의 교체 공사는 기존 배선을 활용합니다. 배선 방식이 다르거나 선이 손상된 경우에만 추가 배선이 필요하며, 현장 확인 후 미리 안내해 드립니다.</p>
+      </details>
+      <details>
+        <summary><span>공사 시간은 얼마나 걸리나요?</span></summary>
+        <p>세대 비디오폰·월패드 교체는 보통 짧은 시간 안에 끝나며, 출입통제나 네트워크 공사는 현장 규모에 따라 달라집니다. 견적 안내 때 예상 작업 시간을 함께 알려 드립니다.</p>
+      </details>
+      <details>
+        <summary><span>도어락과 연동할 수 있나요?</span></summary>
+        <p>연동 가능한 도어락이라면 월패드나 비디오폰에서 문을 열 수 있습니다. 도어락 종류에 따라 별도 연동 작업이 필요할 수 있습니다.</p>
+      </details>
+      <details>
+        <summary><span>다른 회사 제품도 교체·수리해 주나요?</span></summary>
+        <p>타사 제품이 설치된 현장도 상담해 드립니다. 현장을 확인한 뒤 수리 또는 교체 중 알맞은 방법을 제안합니다.</p>
+      </details>
+      <details>
+        <summary><span>견적은 무료인가요?</span></summary>
+        <p>전화·문의 양식 상담은 무료입니다. 현장 방문 조건은 지역과 공사 내용에 따라 달라질 수 있어 상담 시 안내해 드립니다.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="soft">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">CONTACT</div>
+      <h2>문의하기</h2>
+      <p>시공·견적·A/S 문의를 남겨 주시면 빠르게 연락드리겠습니다.</p>
+    </div>
+    <div class="contact">
+      <dl class="info">
+        <!-- 실제 회사 정보로 바꿔 주세요 -->
+        <div><dt>주소</dt><dd>경기도 성남시 분당구 궁내동 (상세 주소 입력)</dd></div>
+        <div><dt>전화</dt><dd>000-0000-0000</dd></div>
+        <div><dt>이메일</dt><dd>info@example.com</dd></div>
+        <div><dt>운영시간</dt><dd>평일 09:00 – 18:00 (주말·공휴일 휴무)</dd></div>
+        <a class="map-card" href="https://map.naver.com/p/search/%EC%8B%A0%EC%9A%B0%EC%BD%94%EB%A7%A5%EC%8A%A4%20%EA%B6%81%EB%82%B4%EB%8F%99" target="_blank" rel="noopener">
+          <span class="map-pin">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </span>
+          <span class="map-text">
+            <strong>오시는 길</strong>
+            <span>성남시 분당구 궁내동 · 네이버 지도에서 보기 ↗</span>
+          </span>
+        </a>
+      </dl>
+      <form onsubmit="event.preventDefault(); alert('문의가 접수되었습니다. (데모 양식: 실제로 전송되지 않습니다)'); this.reset();">
+        <div class="row">
+          <input required placeholder="성함 / 회사명">
+          <input required placeholder="연락처">
+        </div>
+        <div class="row">
+          <select required>
+            <option value="">문의 분야</option>
+            <option>월패드·비디오폰</option>
+            <option>출입통제 시스템</option>
+            <option>네트워크 공사</option>
+            <option>CCTV</option>
+            <option>A/S·점검</option>
+            <option>기타</option>
+          </select>
+          <select>
+            <option value="">건물 유형</option>
+            <option>아파트</option>
+            <option>빌라·단독주택</option>
+            <option>오피스·사무실</option>
+            <option>상가·매장</option>
+            <option>공장·창고</option>
+          </select>
+        </div>
+        <input placeholder="사용 중인 제품 모델명 (아시는 경우)">
+        <textarea placeholder="문의 내용 (현장 위치, 증상, 희망 일정 등)"></textarea>
+        <button type="submit">문의 보내기</button>
+        <p class="note">데모 양식입니다. 실제 전송하려면 메일·폼 서비스 연동이 필요합니다.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>신우코맥스 (코맥스 대리점) · 경기도 성남시 분당구 궁내동 · 대표 ○○○ · 사업자등록번호 000-00-00000</span>
+    <span>© 2026 신우코맥스. All rights reserved.</span>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:000-0000-0000" class="call">전화 상담</a>
+  <a href="#contact" class="ask">견적 문의</a>
+</div>
+
+</body>
+</html>

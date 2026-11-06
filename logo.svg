@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512">
+  <title>신우코맥스 심볼</title>
+  <path d="M69 17 H38 Q23 17 23 33 Q23 49 39 49 H60 Q76 49 76 65 Q76 82 60 82 H30" fill="none" stroke="#0b5cad" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="69" cy="17" r="9" fill="#16b3a0" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="49.5" cy="49" r="7" fill="#ffffff" stroke="#16b3a0" stroke-width="4"/>
+  <circle cx="30" cy="82" r="9" fill="#16b3a0" stroke="#ffffff" stroke-width="3"/>
+</svg>
