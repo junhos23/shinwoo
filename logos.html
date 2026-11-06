@@ -54,6 +54,19 @@
   .lk1 .r em { font-style: normal; display: block; font-weight: 600; letter-spacing: .12em; font-size: .85em; }
 
   .note { margin-top: 28px; font-size: 13px; color: var(--ink-soft); }
+
+  /* 확정안 */
+  .final { margin-top: 28px; background: var(--bg); border: 2px solid var(--brand); border-radius: 20px; padding: 32px; display: grid; gap: 24px; }
+  .f-main { display: grid; place-items: center; padding: 24px 0; }
+  .f-main img { width: min(100%, 560px); height: auto; }
+  .f-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .f-item { display: grid; gap: 8px; font-size: 13px; color: var(--ink-soft); }
+  .f-box { height: 110px; border-radius: 14px; background: var(--bg-soft); display: grid; place-items: center; padding: 0 16px; }
+  .f-box img { max-width: 100%; }
+  .f-box.rev-bg { background: var(--brand); }
+  .past { margin-top: 48px; font-size: 18px; font-weight: 700; color: var(--ink-soft); }
+  .past + .grid { margin-top: 16px; opacity: .85; }
+  code { font-size: .9em; background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; }
 </style>
 </head>
 <body>
@@ -92,9 +105,19 @@
 </svg>
 
 <div class="wrap">
-  <h1>신우코맥스 로고 초안 (다시 만든 안)</h1>
-  <p class="lead">지역 대리점·시공업체 사이트를 참고해, 화려함보다 <b>명함·차량·간판에서 잘 읽히는 것</b>을 기준으로 다시 만들었습니다. 오른쪽은 명함, 차량·간판 띠, 작은 아이콘에 넣었을 때의 모습입니다.</p>
+  <h1>신우코맥스 로고</h1>
+  <p class="lead">확정안: <b>집 + S 심볼</b>, 문구 "출입통제 · 홈네트워크 · CCTV 시공 전문". 파일은 <code>assets/logo/</code>에 있습니다.</p>
 
+  <section class="final">
+    <div class="f-main"><img src="assets/logo/logo-horizontal-color.svg" alt="신우코맥스 가로형 로고"></div>
+    <div class="f-row">
+      <div class="f-item"><div class="f-box"><img src="assets/logo/logo-compact-color.svg" alt="" style="height:44px"></div><span>간단형 (홈페이지 상단 등)</span></div>
+      <div class="f-item"><div class="f-box rev-bg"><img src="assets/logo/logo-horizontal-white.svg" alt="" style="height:52px"></div><span>흰색 (차량·간판·어두운 배경)</span></div>
+      <div class="f-item"><div class="f-box"><img src="assets/logo/app-icon.svg" alt="" style="height:56px;border:1px solid var(--line);border-radius:14px"></div><span>앱 아이콘·파비콘</span></div>
+    </div>
+  </section>
+
+  <h2 class="past">검토했던 초안</h2>
   <div class="grid">
 
     <!-- 1 -->

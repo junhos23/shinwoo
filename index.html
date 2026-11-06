@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>신우코맥스</title>
 <meta name="description" content="신우코맥스 - 성남 분당 궁내동 코맥스 대리점. 월패드·비디오폰 교체, 출입통제, 네트워크 공사 전문">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M69 17 H38 Q23 17 23 33 Q23 49 39 49 H60 Q76 49 76 65 Q76 82 60 82 H30' fill='none' stroke='%230b5cad' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='69' cy='17' r='9' fill='%2316b3a0'/%3E%3Ccircle cx='49.5' cy='49' r='7' fill='%23fff' stroke='%2316b3a0' stroke-width='4'/%3E%3Ccircle cx='30' cy='82' r='9' fill='%2316b3a0'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/logo/app-icon.svg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
   :root {
     --bg: #ffffff;
@@ -20,21 +19,11 @@
     --accent: #16b3a0;
     --naver: #03c75a;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #0e151d; --bg-soft: #141e29; --ink: #e8eef4; --ink-soft: #9aa9b8;
-      --line: #26333f; --brand: #4a98e6; --brand-deep: #0b2f57; --accent: #2dd4bf;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #0e151d; --bg-soft: #141e29; --ink: #e8eef4; --ink-soft: #9aa9b8;
-    --line: #26333f; --brand: #4a98e6; --brand-deep: #0b2f57; --accent: #2dd4bf;
-  }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; scroll-padding-top: 72px; }
   body {
-    font-family: "Noto Sans KR", system-ui, sans-serif;
+    font-family: "Pretendard", system-ui, sans-serif;
     background: var(--bg); color: var(--ink);
     line-height: 1.7; word-break: keep-all;
   }
@@ -50,7 +39,7 @@
   }
   .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 20px; letter-spacing: -0.02em; }
-  .logo-mark { width: 36px; height: 36px; flex: none; }
+  .logo-img { height: 38px; width: auto; display: block; }
   .logo small { font-size: 12px; font-weight: 500; color: var(--ink-soft); margin-left: 2px; }
   .nav ul { display: flex; gap: 26px; list-style: none; font-weight: 500; font-size: 15px; }
   .nav ul a:hover { color: var(--brand); }
@@ -233,12 +222,8 @@
 <header>
   <div class="wrap nav">
     <a href="#" class="logo">
-      <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
-        <path d="M69 17 H38 Q23 17 23 33 Q23 49 39 49 H60 Q76 49 76 65 Q76 82 60 82 H30" fill="none" style="stroke:var(--brand)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="69" cy="17" r="9" style="fill:var(--accent);stroke:var(--bg)" stroke-width="3"/>
-        <circle cx="49.5" cy="49" r="7" style="fill:var(--bg);stroke:var(--accent)" stroke-width="4"/>
-        <circle cx="30" cy="82" r="9" style="fill:var(--accent);stroke:var(--bg)" stroke-width="3"/>
-      </svg>신우코맥스<small>코맥스 대리점</small></a>
+      <img class="logo-img" src="assets/logo/logo-compact-color.svg" alt="신우코맥스">
+      <small>코맥스 대리점</small></a>
     <ul>
       <li><a href="#services">사업분야</a></li>
       <li><a href="#products">취급제품</a></li>

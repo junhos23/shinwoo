@@ -1,0 +1,14 @@
+{
+  "name": "shinwoo-commax",
+  "private": true,
+  "description": "신우코맥스 홈페이지·로고·관리 대시보드",
+  "scripts": {
+    "logo": "node tools/build-logo.js",
+    "serve": "node serve.js"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "opentype.js": "^1.3.4",
+    "pretendard": "^1.3.9"
+  }
+}
